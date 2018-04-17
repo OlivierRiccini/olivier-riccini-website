@@ -4,6 +4,7 @@ class PagesController < ApplicationController
   def home
     @projects = Project.all
     @admin = User.where(admin: true, email: "info@olivierriccini.com").take
+    @message = Message.new
   end
 
   def inho_dashboard
