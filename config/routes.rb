@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
 
-  devise_for :users
   root 'pages#home'
+
+  resources :messages, only: [ :index, :show, :new, :create, :destroy ]
+  resources :appointments, only: [ :index, :show, :new, :create, :destroy ]
+  devise_for :users
   resources :projects
 
   get 'inho_dashboard', to: "pages#inho_dashboard"

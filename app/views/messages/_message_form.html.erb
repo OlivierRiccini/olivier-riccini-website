@@ -1,0 +1,11 @@
+<%= simple_form_for @message do |f| %>
+  <%= f.error_notification %>
+
+  <%= f.input :first_name %>
+  <%= f.input :last_name %>
+  <%= f.input :company %>
+  <%= f.input :email %>
+  <%= f.input :object %>
+  <%= f.input :content %>
+  <%= f.button :submit %>
+<% end %>
