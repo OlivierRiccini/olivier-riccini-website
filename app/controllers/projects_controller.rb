@@ -1,10 +1,6 @@
 class ProjectsController < ApplicationController
   before_action :find_project, only: [ :show, :edit, :destroy ]
 
-  def index
-    @projects = Project.all
-  end
-
   def show
   end
 
