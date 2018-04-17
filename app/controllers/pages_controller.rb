@@ -1,8 +1,9 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [ :home ]
+  skip_before_action :authenticate_user!, only: :home
 
   def home
     @projects = Project.all
+    @admin = User.where(admin: true, email: "info@olivierriccini.com").take
   end
 
   def inho_dashboard
