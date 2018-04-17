@@ -83,9 +83,9 @@ projects.each do |project|
     UsedTechnology.create(project_id: new_project.id, technology_id: technology_id)
   end
 end
+
+inho_admin = User.new(email: "info@olivierriccini.com", password: "Ronaldor99", admin: true)
+inho_admin.remote_avatar_url = "http://res.cloudinary.com/dto9foc0m/image/upload/v1523991155/avatar.png"
+inho_admin.save
+
 puts "Finished with succès!"
-
-
-
-
-

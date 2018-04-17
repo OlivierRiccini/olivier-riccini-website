@@ -20,7 +20,8 @@ gem 'uglifier', '>= 1.3.0'
 gem 'webpacker'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
-
+gem 'devise'
+gem "pundit"
 
 gem 'bootstrap-sass'
 gem 'font-awesome-sass'
