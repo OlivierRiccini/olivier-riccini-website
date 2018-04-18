@@ -3,7 +3,10 @@ Rails.application.routes.draw do
   root 'pages#home'
 
   resources :messages, only: [ :index, :show, :new, :create, :destroy ]
-  resources :appointments, only: [ :index, :show, :new, :create, :destroy ]
+  resources :appointments, only: [ :index, :show, :destroy ]
+
+
+
   devise_for :users
   resources :projects
 
