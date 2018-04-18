@@ -5,6 +5,7 @@ class PagesController < ApplicationController
     @projects = Project.all
     @admin = User.where(admin: true, email: "info@olivierriccini.com").take
     @message = Message.new
+    @appointment = Appointment.new
   end
 
   def inho_dashboard

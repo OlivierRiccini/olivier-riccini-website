@@ -1,11 +1,24 @@
-<%= simple_form_for @message do |f| %>
-  <%= f.error_notification %>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6">
+    <%= simple_form_for @message do |f, a| %>
+      <%= f.error_notification %>
 
-  <%= f.input :first_name %>
-  <%= f.input :last_name %>
-  <%= f.input :company %>
-  <%= f.input :email %>
-  <%= f.input :object %>
-  <%= f.input :content %>
-  <%= f.button :submit %>
-<% end %>
+      <%= f.input :first_name %>
+      <%= f.input :last_name %>
+      <%= f.input :company %>
+      <%= f.input :email %>
+      <%= f.input :object %>
+      <%= f.input :content %>
+
+      <%= f.fields_for @appointment do |g| %>
+        <%= g.input :appointment_type %>
+        <%= g.input :date %>
+        <%= g.input :address %>
+        <%= g.input :phone_number %>
+      <% end %>
+
+      <%= f.button :submit %>
+    <% end %>
+  </div>
+</div>
