@@ -1,0 +1,21 @@
+.flex-box-landing-page {
+	height: 100vh;
+}
+
+.content-box {
+		display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 60%;
+  margin: 0 auto;
+  span {
+  	font-weight: bolder;
+  	font-size: 20px;
+  }
+}
+
+.intro-text {
+	letter-spacing: 0.1px;
+	line-height: 1.5em;
+}

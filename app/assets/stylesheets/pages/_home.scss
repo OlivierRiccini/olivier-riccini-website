@@ -1,4 +1,36 @@
 // Specific CSS for your home-page
+body {
+  font-family: $raleway;
+  background-color: $main-background;
+}
+
+.custom-nav-bar {
+  position: fixed;
+  width: 100vw;
+  z-index: 9;
+}
+
+
+#logo-inho {
+  position: absolute;
+  width: 60px;
+  top: 20px;
+  left: 20px;
+}
+
+.navigation {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  ul {
+    padding: 0;
+    list-style: none;
+    li a {
+      color: #000;
+    }
+  }
+}
+
 .project-box-image {
   height: 250px;
   background-size: cover;

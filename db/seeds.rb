@@ -85,7 +85,7 @@ projects.each do |project|
 end
 
 inho_admin = User.new(email: "info@olivierriccini.com", password: "Ronaldor99", admin: true)
-inho_admin.remote_avatar_url = "http://res.cloudinary.com/dto9foc0m/image/upload/v1523991155/avatar.png"
+inho_admin.remote_avatar_url = "http://res.cloudinary.com/dto9foc0m/image/upload/v1524169788/avatar-black-white.png"
 inho_admin.save
 
 puts "Finished with succès!"

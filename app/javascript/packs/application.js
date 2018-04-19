@@ -13,3 +13,9 @@
 //= require_tree .
 
 console.log('Hello World from Webpacker')
+
+import 'fullpage.js';
+
+$(document).ready(function() {
+  $('#fullpage').fullpage();
+});
