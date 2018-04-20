@@ -15,7 +15,5 @@
 console.log('Hello World from Webpacker')
 
 import 'fullpage.js';
+import '../components/_custom_fullpage.js';
 
-$(document).ready(function() {
-  $('#fullpage').fullpage();
-});

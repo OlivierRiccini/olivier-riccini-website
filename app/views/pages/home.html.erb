@@ -6,21 +6,21 @@
   <%= cl_image_tag "logo-inho.svg", alt: 'logo', id: 'logo-inho' %>
   <div class="navigation">
     <ul>
-      <li><a href="#">Projects</a></li>
-      <li><a href="#">Reviews</a></li>
-      <li><a href="#">Contact</a></li>
+      <li class="nav-item"><div class="overflow-hidden"><p id="home-p">Home</p></div><span class="span1" id="home"><span class="span2"></span></span></li>
+      <li class="nav-item"><div class="overflow-hidden"><p id="projects-p">Projects</p></div><span class="span1" id="projects"><span class="span2"></span></span></li>
+      <li class="nav-item"><div class="overflow-hidden"><p id="contact-p">Contact</p></div><span class="span1" id="contact"><span class="span2"></span></span></li>
     </ul>
   </div>
 </div>
 
 <div id="fullpage">
-  <div class="section">
+  <div class="section" data-index="1">
     <%= render 'shared/landing_page' %>
   </div>
-  <div class="section">
+  <div class="section" data-index="2">
     <%= render 'shared/projects_index' %>
   </div>
-  <div class="section">
+  <div class="section" data-index="3">
     <%= render 'shared/contact_section' %>
   </div>
 </div>
