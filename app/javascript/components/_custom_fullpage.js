@@ -21,9 +21,11 @@ function navHomeAnim() {
   spanContact.classList.remove('span-active');
 
   $('.arrow-down-container').fadeIn();
+  // $('#avatar').css('top', 'calc(50% - 100px)');
 }
 
 function navProjectsAnim() {
+
   homeP.classList.remove('display-class');
   spanHome.classList.remove('span-active');
   projectsP.classList.add('display-class');
@@ -31,6 +33,7 @@ function navProjectsAnim() {
   spanProjects.classList.add('span-active');
   spanContact.classList.remove('span-active');
 
+  // $('#avatar').css('top', 'calc(15% - 100px)');
   $('.arrow-down-container').fadeIn();
 }
 
@@ -52,6 +55,19 @@ $(document).ready(function() {
     afterLoad: function() {
       if (this[0].id === "home-section" ) {
         navHomeAnim();
+        // $('#avatar').css('top', 'calc(50% - 100px)');
+        // $('#avatar').css('right', '20%');
+      } else if ( this[0].id === "projects-section" ) {
+        navProjectsAnim();
+      } else {
+        navContactAnim();
+      }
+    },
+
+    onLeave: function() {
+      if (this[0].id === "home-section" ) {
+        // $('#avatar').css('top', 'calc(16% - 100px)');
+        // $('#avatar').css('right', '12%');
       } else if ( this[0].id === "projects-section" ) {
         navProjectsAnim();
       } else {
@@ -72,13 +88,6 @@ $(document).ready(function() {
     $.fn.fullpage.moveTo(3);
     return false;
   });
-
-
-  // $('.arrow-top-0').click(function(){
-  //   $.fn.fullpage.moveTo(1);
-  //   return false;
-  // });
-
 });
 
 
@@ -111,14 +120,6 @@ contact.addEventListener('mouseleave', function() { slideRight(contactP) });
 home.addEventListener('click', function() { display(homeP) });
 projects.addEventListener('click', function() { display(projectsP) });
 contact.addEventListener('click', function() { display(contactP) });
-
-// /* Arrow to top 0 */
-// $(document).ready(function(){
-//   $('.arrow-top-0').click(function(){
-//     $.fn.fullpage.moveTo(1);
-//     return false;
-//   });
-// });
 
 // /* Arrow pulse bottom */
 const arrowDownContainer = document.querySelectorAll('.arrow-down-container');
@@ -157,41 +158,3 @@ function globalArrowDownAnimation() {
 }
 
 globalArrowDownAnimation();
-
-
-// /* Arrow pulse up */
-// const arrowUpCircle = document.querySelectorAll('.arrow-up-circle');
-
-// function globalArrowUpAnimation() {
-//   arrowUpCircle.forEach(function(arrow) {
-//     const arrowUp = arrow.querySelectorAll('.arrow-up');
-//     let intervalArrowUp = null;
-
-//     function defIntervalArrowUp() {
-//       intervalArrowUp = setInterval(arrwoUpAnimation, 50);
-//     }
-
-//     let arrowUpIndex = 5;
-//     let arrowUpColorIndex = 0;
-
-//     function arrwoUpAnimation() {
-//       arrowUpIndex += 1;
-//       arrowUpColorIndex += 0.05;
-//       arrowUp[0].style.top = `${arrowUpIndex}px`;
-//       arrowUp[0].style.borderColor = `rgba(0,0,0,${arrowUpColorIndex})`;
-//       if (arrowUpColorIndex >= 1) {
-//         arrowUpColorIndex = 0;
-//       }
-//       if (arrowUpIndex >= 20) {
-//         arrowUpIndex = 5;
-//       }
-//     }
-
-//     /* calling scroll down function using index defining scrolling height */
-//     arrow.addEventListener("click", function(){$.fn.fullpage.moveSectionUp();});
-
-//   defIntervalArrowUp();
-
-//   });
-// }
-// globalArrowUpAnimation();
