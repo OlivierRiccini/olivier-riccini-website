@@ -6,7 +6,7 @@
   <%= cl_image_tag "logo-inho.svg", alt: 'logo', id: 'logo-inho' %>
   <div class="navigation">
     <ul>
-      <li class="nav-item"><div class="overflow-hidden"><p id="home-p">Home</p></div><span class="span1" id="home"><span class="span2"></span></span></li>
+      <li class="nav-item"><div class="overflow-hidden"><p id="home-p" class="display-class">Home</p></div><span class="span1 span-active" id="home"><span class="span2"></span></span></li>
       <li class="nav-item"><div class="overflow-hidden"><p id="projects-p">Projects</p></div><span class="span1" id="projects"><span class="span2"></span></span></li>
       <li class="nav-item"><div class="overflow-hidden"><p id="contact-p">Contact</p></div><span class="span1" id="contact"><span class="span2"></span></span></li>
     </ul>
@@ -23,4 +23,9 @@
   <div class="section" data-index="3">
     <%= render 'shared/contact_section' %>
   </div>
+</div>
+
+<div class="arrow-down-circle">
+  <div class="arrow-down arrow-down-animated"></div>
+  <div class="arrow-down arrow-down"></div>
 </div>
