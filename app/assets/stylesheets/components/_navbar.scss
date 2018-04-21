@@ -58,6 +58,13 @@
     background-color: $main-background;
   };
 }
+
 .display-class {
   right: 0 !important;
+  font-weight: bolder !important;
+}
+
+.span-active {
+  background-color: #000 !important;
+  transform: rotate(0deg) !important;
 }
