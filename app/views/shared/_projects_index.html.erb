@@ -1,20 +1,64 @@
-<div class="filter-tags">
-  <p>You can filter my projects by selecting tags!</p>
-  <div class="container-tags">
-    <% @technologies.each do |technology| %>
-      <span class="technology-tag"><%= technology.name %></span>
-    <% end %>
-  </div>
-</div>
 <div class="container">
+  <div class="filter-tags">
+    <div class="container-tags">
+      <% @technologies.each do |technology| %>
+        <span class="technology-tag" data-technology-id="<%= technology.id %>" data-state="uncliked"><%= technology.name%></span>
+      <% end %>
+    </div>
+  </div>
   <div class="row">
     <% @projects.each do |project| %>
-      <div class="col-xs-6 col-sm-3">
+      <div class="col-xs-12 col-sm-6" id="project<%= project.id %>">
         <div class="box-project">
-          <div class="project-box-image" style="background-image: linear-gradient(-225deg, rgba(100, 100, 100, 0.3), rgba(100, 100, 100, 0.1)), url(<%= cl_image_path project.image %>);"></div>
+          <div class="project-box-image" style="background-image: url(<%= cl_image_path project.image %>);">
+          </div>
         </div>
-          <h3 class="project-title"><%= project.title %></h3>
       </div>
     <% end %>
   </div>
 </div>
+
+<script>
+  const tags = document.querySelectorAll('.technology-tag');
+
+  const searchArray = [];
+
+  function tagEvent(tag) {
+    if ( tag.dataset.state == 'unclicked' ) {
+      tag.style.opacity = '1';
+      tag.dataset.state = 'clicked';
+      var indexItem = searchArray.indexOf(tag.dataset.technologyId);
+      searchArray.splice(indexItem, 1);
+    } else {
+      tag.style.opacity = '0.1';
+      tag.dataset.state = 'unclicked';
+      searchArray.push(tag.dataset.technologyId);
+    }
+
+    <% @projects.each do |project| %>
+      var technologiesProject = [];
+      <% project.used_technologies.each do |technology| %>
+        technologiesProject.push('<%= technology.technology_id %>');
+      <% end %>
+      if (searchArray === undefined || searchArray.length == 0) {
+        document.getElementById('project<%= project.id %>').style.visibility = 'visible';
+      }
+
+      function checkPresence(searchItem) {
+        return technologiesProject.includes(searchItem);
+      }
+
+      if ( searchArray.every(checkPresence) ) {
+        document.getElementById('project<%= project.id %>').style.visibility = 'visible';
+      } else {
+        document.getElementById('project<%= project.id %>').style.visibility = 'hidden';
+      }
+
+    <% end %>
+  }
+
+  tags.forEach(function(tag) {
+    tag.addEventListener('click', function() {tagEvent(tag) });
+  });
+
+</script>
