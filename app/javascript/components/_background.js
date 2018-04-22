@@ -84,7 +84,7 @@ var star = function() {
 };
 
 var starfield = function() {
-  var numOfStars = 200;
+  var numOfStars = 450;
 
   var stars = [];
 
