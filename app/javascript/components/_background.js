@@ -21,7 +21,7 @@ var stampedDate = new Date();
 
 var ctx = canvas.getContext("2d");
 
-ctx.fillStyle = "black";
+ctx.fillStyle = "rgba(0,0,0,0.8)";
 ctx.fillRect(0, 0, canvas.width, canvas.height);
 
 function rnd(num1, num2) {
@@ -29,7 +29,7 @@ function rnd(num1, num2) {
 }
 
 function getColor() {
-  return "rgba(0,0,0,0.5)";
+  return "rgba(0,0,0,0.3)";
 }
 
 var star = function() {
