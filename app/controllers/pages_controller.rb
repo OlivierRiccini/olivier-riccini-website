@@ -3,6 +3,7 @@ class PagesController < ApplicationController
 
   def home
     @projects = Project.all
+    @technologies = Technology.all
     @admin = User.where(admin: true, email: "info@olivierriccini.com").take
     @message = Message.new
     @appointment = Appointment.new

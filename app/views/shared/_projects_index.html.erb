@@ -1,11 +1,19 @@
+<div class="filter-tags">
+  <p>You can filter my projects by selecting tags!</p>
+  <div class="container-tags">
+    <% @technologies.each do |technology| %>
+      <span class="technology-tag"><%= technology.name %></span>
+    <% end %>
+  </div>
+</div>
 <div class="container">
   <div class="row">
     <% @projects.each do |project| %>
-      <div class="col-xs-12 col-sm-6 col-md-3">
+      <div class="col-xs-6 col-sm-3">
         <div class="box-project">
-          <h3 class="project-title"><%= project.title %></h3>
           <div class="project-box-image" style="background-image: linear-gradient(-225deg, rgba(100, 100, 100, 0.3), rgba(100, 100, 100, 0.1)), url(<%= cl_image_path project.image %>);"></div>
         </div>
+          <h3 class="project-title"><%= project.title %></h3>
       </div>
     <% end %>
   </div>
