@@ -4,7 +4,8 @@
   "dependencies": {
     "@rails/webpacker": "3.4",
     "datetime-picker": "^0.6.0",
-    "fullpage.js": "^2.9.7"
+    "fullpage.js": "^2.9.7",
+    "gl-matrix": "^2.5.1"
   },
   "devDependencies": {
     "webpack-dev-server": "2.11.2"
