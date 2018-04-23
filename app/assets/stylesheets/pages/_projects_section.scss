@@ -1,15 +1,21 @@
-.fp-tableCell {
+.flex-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
+  justify-content: center;
+  height: 100vh;
 }
 
-#projects-section {
-  position: relative;
-  .col-xs-12 {
-    padding: 0;
-  }
+.projects-row {
+  display: flex;
+  flex: 1 0 3;
+  flex-basis: 80;
+  flex-basis: 60%;
+  flex-direction: column;
+}
+
+#projects-section .col-xs-6 {
+  padding: 0;
+  transition: all 2s;
 }
 
 .box-project {
@@ -22,7 +28,8 @@
 }
 
 .project-box-image {
-  height: 200px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  height: 25vh;
   background-size: cover;
   background-repeat:no-repeat;
   background-position:center;
@@ -33,14 +40,21 @@
   }
 }
 
+.filter-tags {
+  width: 80%;
+  margin: 0 auto;
+}
+
 .container-tags {
   border: 1px solid rgba(0, 0, 0, 0.1);
   padding: 5px;
+   // box-shadow: 1px 1px 5px rgba(200, 200, 200, 0.2);
 }
 
 .technology-tag {
   padding: 5px 10px;
   background-color: rgba(220, 220, 220, 0.1);
+  box-shadow: 1px 1px 5px rgba(200, 200, 200, 0.2);
   display: inline-block;
   max-width: fit-content;
   border: 1px solid rgba(0, 0, 0, 0.1);
@@ -49,5 +63,180 @@
   transition: all 0.5s;
   &:hover {
     background-color: rgba(220, 220, 220, 0.4);
+  }
+}
+
+.filter-tags-dropdown {
+  display: none;
+}
+
+.filter-button-dropdown {
+  width: 100%;
+  display: block;
+  text-align: center;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 5px;
+  background-color: rgba(220, 220, 220, 0.1);
+  cursor: pointer;
+  width: 100%;
+  margin: 40px 0 10px 0;
+  transition: all 2s;
+  &:hover {
+    background-color: rgba(220, 220, 220, 0.4);
+    border-color: rgba(0, 0, 0, 0.4);
+  }
+}
+
+.container-tags-dropdown {
+  display: none;
+  position: absolute;
+  z-index: 9;
+  background-color: rgba(252, 252, 252, 0.97);
+  padding: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive */
+@media screen and (max-width: 1000px) {
+  .filter-tags {
+    display: none;
+  }
+  .filter-tags-dropdown {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  #projects-section .col-xs-6 {
+    padding: 0;
+  };
+  .box-project {
+    padding: 5px;
+  };
+  .container-tags-dropdown {
+    width: 90%;
+  }
+}
+
+
+/* Pop Up project */
+
+.pop-up-project {
+  display: none;
+  position: absolute;
+  top: 100vh;
+  height: 90vh;
+  left: 12vw;
+  right: 12vw;
+  padding: 10px;
+  background-color: rgba(252, 252, 252, 0.97);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 1px 1px 5px rgba(200, 200, 200, 0.2);
+  z-index: 9;
+  text-align: center;
+}
+
+.container-pop-up {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  img {
+    border: 1px solid $main-background;
+  }
+  h2 {
+    display: block;
+    color: rgba(252, 252, 252, 0.97);
+    background-color: rgba(0, 0, 0, 0.1);
+    box-shadow: 1px 1px 5px rgba(200, 200, 200, 0.2);
+    padding: 5px;
+    width: 100%;
+  }
+}
+
+.image-pop-up-project {
+  width: 50%;
+}
+
+.links-container {
+  display: inline-flex;
+}
+
+.link-btn {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: rgba(220, 220, 220, 0.1);
+  box-shadow: 1px 1px 5px rgba(200, 200, 200, 0.2);
+  padding: 10px 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $font-color;
+  margin: 10px;
+  transition: all 1s;
+  &:hover {
+    text-decoration: none;
+    background-color: rgba(220, 220, 220, 0.4);
+    border-color: rgba(0, 0, 0, 0.4);
+    color: $font-color;
+  };
+  &:focus {
+    text-decoration: none;
+    color: $font-color;
+  }
+}
+
+
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+.triangle {
+
+  width: 60px;
+  height: 60px;
+  border-top: solid 30px rgba(0, 0, 0, 0.1);
+  border-left: solid 30px rgba(0, 0, 0, 0.1);
+  border-bottom: solid 30px transparent;
+  border-right: solid 30px transparent;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  margin: 0;
+  cursor: pointer;
+  p {
+    position: relative;
+    right: 26px;
+    top: -5px;
+    transform: rotate(-45deg);
+  };
+  &:hover {
+    border-top: solid 30px rgba(0, 0, 0, 0.4);
+    border-left: solid 30px rgba(0, 0, 0, 0.4);
+  }
+}
+
+
+@media screen and (max-width: 1500px) {
+  .pop-up-project {
+    left: 15vw;
+    right: 15vw;
+  }
+}
+
+@media screen and (max-width: 815px) {
+  .pop-up-project {
+    left: 17vw;
+    right: 17vw;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .pop-up-project {
+    left: 0;
+    right: 0;
   }
 }

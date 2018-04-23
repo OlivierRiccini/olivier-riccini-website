@@ -1,4 +1,25 @@
-<div class="container">
+<% @projects.each do |project| %>
+  <div class="pop-up-project" data-belongs-to-project-id="<%= project.id %>">
+    <div class="container-pop-up">
+      <%= cl_image_tag project.image, class: 'image-pop-up-project' %>
+      <h2><%= project.title.capitalize %></h2>
+      <p><%= project.content %></p>
+      <div class="links-container">
+        <%= link_to project.link, target: '_blank',class: 'link-btn' do %>
+            <i class="fas fa-laptop"></i>
+            &nbsp;&nbsp;go to website
+        <% end %>
+        <%= link_to project.github, target: '_blank',class: 'link-btn' do %>
+          <i class="fab fa-github-alt"></i>
+          &nbsp;&nbsp;source code
+        <% end %>
+      </div>
+    </div>
+    <div class="triangle"><p>close</p></div>
+  </div>
+<% end %>
+
+<div class="container flex-container">
   <div class="filter-tags">
     <div class="container-tags">
       <% @technologies.each do |technology| %>
@@ -6,15 +27,27 @@
       <% end %>
     </div>
   </div>
-  <div class="row">
-    <% @projects.each do |project| %>
-      <div class="col-xs-12 col-sm-6" id="project<%= project.id %>">
-        <div class="box-project">
-          <div class="project-box-image" style="background-image: url(<%= cl_image_path project.image %>);">
+
+  <div class="filter-tags-dropdown">
+    <span class="filter-button-dropdown">Filter <i class="fa fa-caret-down"></i></span></span>
+    <div class="container-tags-dropdown">
+      <% @technologies.each do |technology| %>
+        <span class="technology-tag" data-technology-id="<%= technology.id %>" data-state="uncliked"><%= technology.name%></span>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="projects-row">
+    <div class="row">
+      <% @projects.each do |project| %>
+        <div class="col-xs-6 col-sm-6" id="project<%= project.id %>">
+          <div class="box-project">
+            <div class="project-box-image" data-project-id="<%= project.id %>" style="background-image: url(<%= cl_image_path project.image %>);">
+            </div>
           </div>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
 </div>
 
@@ -41,7 +74,8 @@
         technologiesProject.push('<%= technology.technology_id %>');
       <% end %>
       if (searchArray === undefined || searchArray.length == 0) {
-        document.getElementById('project<%= project.id %>').style.visibility = 'visible';
+        document.getElementById('project<%= project.id %>').style.display = 'block';
+         setTimeout(function() { document.getElementById('project<%= project.id %>').style.opacity = '1'; }, 0);
       }
 
       function checkPresence(searchItem) {
@@ -49,16 +83,18 @@
       }
 
       if ( searchArray.every(checkPresence) ) {
-        document.getElementById('project<%= project.id %>').style.visibility = 'visible';
+        document.getElementById('project<%= project.id %>').style.display = 'block';
+        setTimeout(function() { document.getElementById('project<%= project.id %>').style.opacity = '1'; }, 0);
       } else {
-        document.getElementById('project<%= project.id %>').style.visibility = 'hidden';
+         document.getElementById('project<%= project.id %>').style.opacity = '0';
+        setTimeout(function() { document.getElementById('project<%= project.id %>').style.display = 'none'; }, 500);
       }
 
     <% end %>
   }
 
   tags.forEach(function(tag) {
-    tag.addEventListener('click', function() {tagEvent(tag) });
+    tag.addEventListener('click', function() { tagEvent(tag) });
   });
 
 </script>

@@ -33,4 +33,18 @@
   height: 200px;
 }
 
+/* Responsove */
 
+@media screen and (max-width: 650px) {
+  .content-box {
+    width: 100%;
+  }
+  #avatar {
+    height: 120px;
+  };
+  .intro-text {
+    width: 65%;
+    font-size: 14px;
+    padding: 0;
+  }
+}

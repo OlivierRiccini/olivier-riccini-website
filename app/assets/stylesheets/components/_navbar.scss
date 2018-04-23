@@ -68,3 +68,53 @@
   background-color: $font-color !important;
   transform: rotate(0deg) !important;
 }
+
+/* Responsive */
+
+@media screen and (max-width: 100px) {
+  #logo-inho {
+    width: 50px;
+  };
+  .navigation {
+    top: 12px;
+    right: 12px;
+  };
+}
+
+@media screen and (max-width: 860px) {
+  #logo-inho {
+    width: 50px;
+  };
+  .nav-item {
+    .span1 {
+      margin: 8px;
+      height: 13px;
+      width: 13px;
+    };
+    .span2 {
+      height: 7px;
+      width: 7px;
+    };
+  }
+}
+
+@media screen and (max-width: 650px) {
+  #logo-inho {
+    width: 40px;
+  };
+  .navigation {
+    top: 12px;
+    right: 12px;
+  };
+  .nav-item {
+    .span1 {
+      margin: 8px;
+      height: 12px;
+      width: 12px;
+    };
+    .span2 {
+      height: 6px;
+      width: 6px;
+    };
+  }
+}

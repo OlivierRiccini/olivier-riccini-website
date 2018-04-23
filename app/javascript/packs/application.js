@@ -17,3 +17,36 @@ console.log('Hello World from Webpacker')
 import 'fullpage.js';
 import '../components/_custom_fullpage.js';
 import '../components/_background.js';
+
+$('.filter-button-dropdown').click(function() {
+  $('.container-tags-dropdown').slideToggle();
+  if ($(this).html() === 'Filter <i class="fa fa-caret-up"></i>' ) {
+    $(this).html('Filter <i class="fa fa-caret-down"></i>');
+  } else {
+    $(this).html('Filter <i class="fa fa-caret-up"></i>');
+  }
+});
+
+
+const popUps = document.querySelectorAll('.pop-up-project');
+
+function showPopUp(projectId) {
+  popUps.forEach(function(popUp) {
+    if ( popUp.dataset.belongsToProjectId === projectId ) {
+      $(popUp).slideToggle();
+      $('.triangle').click(function() {
+        $(popUp).slideUp();
+      })
+    }
+  })
+}
+
+const projectBoxes =  document.querySelectorAll('.project-box-image');
+const triangles =  document.querySelectorAll('.triangles');
+
+
+projectBoxes.forEach(function(projectBox) {
+  projectBox.addEventListener('click', function() {
+    showPopUp(this.dataset.projectId) }
+  );
+})
