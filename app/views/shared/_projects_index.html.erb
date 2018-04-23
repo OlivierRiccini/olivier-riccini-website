@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container flex-container">
   <div class="filter-tags">
     <div class="container-tags">
       <% @technologies.each do |technology| %>
@@ -6,15 +6,27 @@
       <% end %>
     </div>
   </div>
-  <div class="row">
-    <% @projects.each do |project| %>
-      <div class="col-xs-12 col-sm-6" id="project<%= project.id %>">
-        <div class="box-project">
-          <div class="project-box-image" style="background-image: url(<%= cl_image_path project.image %>);">
+
+  <div class="filter-tags-dropdown">
+    <button class="filter-button-dropdown">Filter</button>
+    <div class="container-tags-dropdown">
+      <% @technologies.each do |technology| %>
+        <span class="technology-tag" data-technology-id="<%= technology.id %>" data-state="uncliked"><%= technology.name%></span>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="projects-row">
+    <div class="row">
+      <% @projects.each do |project| %>
+        <div class="col-xs-6 col-sm-6" id="project<%= project.id %>">
+          <div class="box-project">
+            <div class="project-box-image" style="background-image: url(<%= cl_image_path project.image %>);">
+            </div>
           </div>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
 </div>
 
@@ -41,7 +53,8 @@
         technologiesProject.push('<%= technology.technology_id %>');
       <% end %>
       if (searchArray === undefined || searchArray.length == 0) {
-        document.getElementById('project<%= project.id %>').style.visibility = 'visible';
+        document.getElementById('project<%= project.id %>').style.display = 'block';
+        setTimeout(function() { document.getElementById('project<%= project.id %>').style.padding = '0 0'; }, 200);
       }
 
       function checkPresence(searchItem) {
@@ -49,9 +62,11 @@
       }
 
       if ( searchArray.every(checkPresence) ) {
-        document.getElementById('project<%= project.id %>').style.visibility = 'visible';
+        document.getElementById('project<%= project.id %>').style.display = 'block';
+        setTimeout(function() { document.getElementById('project<%= project.id %>').style.padding = '0 0'; }, 0);
       } else {
-        document.getElementById('project<%= project.id %>').style.visibility = 'hidden';
+        document.getElementById('project<%= project.id %>').style.padding = '0 50%';
+        setTimeout(function() { document.getElementById('project<%= project.id %>').style.display = 'none'; }, 500);
       }
 
     <% end %>
