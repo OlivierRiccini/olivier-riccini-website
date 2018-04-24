@@ -5,6 +5,7 @@ class PagesController < ApplicationController
     @projects = Project.all
     @technologies = Technology.all
     @admin = User.where(admin: true, email: "info@olivierriccini.com").take
+    @user = User.new
     @message = Message.new
     @appointment = Appointment.new
   end

@@ -9,14 +9,22 @@
 
 //= require jquery
 //= require jquery_ujs
+//= require jquery_ui
 //= require bootstrap-sprockets
 //= require_tree .
 
+console.log('test');
 console.log('Hello World from Webpacker')
 
 import 'fullpage.js';
+
+import flatpickr from 'flatpickr';
+import 'flatpickr/dist/themes/airbnb.css';
+
 import '../components/_custom_fullpage.js';
 import '../components/_background.js';
+
+
 
 $('.filter-button-dropdown').click(function() {
   $('.container-tags-dropdown').slideToggle();
@@ -26,7 +34,6 @@ $('.filter-button-dropdown').click(function() {
     $(this).html('Filter <i class="fa fa-caret-up"></i>');
   }
 });
-
 
 const popUps = document.querySelectorAll('.pop-up-project');
 
@@ -38,7 +45,7 @@ function showPopUp(projectId) {
         $(popUp).slideUp();
       })
     }
-  })
+  });
 }
 
 const projectBoxes =  document.querySelectorAll('.project-box-image');
@@ -50,3 +57,10 @@ projectBoxes.forEach(function(projectBox) {
     showPopUp(this.dataset.projectId) }
   );
 })
+
+flatpickr('.datepicker', {
+  inline: true,
+  allInput: true,
+  enableTime: true
+});
+

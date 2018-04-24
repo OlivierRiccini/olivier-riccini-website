@@ -29,7 +29,7 @@
   </div>
 
   <div class="filter-tags-dropdown">
-    <span class="filter-button-dropdown">Filter <i class="fa fa-caret-down"></i></span></span>
+    <span class="filter-button-dropdown big-button">Filter <i class="fa fa-caret-down"></i></span></span>
     <div class="container-tags-dropdown">
       <% @technologies.each do |technology| %>
         <span class="technology-tag" data-technology-id="<%= technology.id %>" data-state="uncliked"><%= technology.name%></span>
@@ -58,12 +58,14 @@
 
   function tagEvent(tag) {
     if ( tag.dataset.state == 'unclicked' ) {
-      tag.style.opacity = '1';
+      tag.classList.remove('technology-tag-active');
+      tag.classList.add('technology-tag');
       tag.dataset.state = 'clicked';
       var indexItem = searchArray.indexOf(tag.dataset.technologyId);
       searchArray.splice(indexItem, 1);
     } else {
-      tag.style.opacity = '0.1';
+      tag.classList.remove('technology-tag');
+      tag.classList.add('technology-tag-active');
       tag.dataset.state = 'unclicked';
       searchArray.push(tag.dataset.technologyId);
     }

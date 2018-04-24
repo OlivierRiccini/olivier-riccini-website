@@ -55,8 +55,6 @@ $(document).ready(function() {
     afterLoad: function() {
       if (this[0].id === "home-section" ) {
         navHomeAnim();
-        // $('#avatar').css('top', 'calc(50% - 100px)');
-        // $('#avatar').css('right', '20%');
       } else if ( this[0].id === "projects-section" ) {
         navProjectsAnim();
       } else {
@@ -66,10 +64,17 @@ $(document).ready(function() {
 
     onLeave: function() {
       if (this[0].id === "home-section" ) {
-        // $('#avatar').css('top', 'calc(16% - 100px)');
-        // $('#avatar').css('right', '12%');
       } else if ( this[0].id === "projects-section" ) {
         navProjectsAnim();
+
+        /* Closing project all pop-ups */
+        const popUps = document.querySelectorAll('.pop-up-project');
+
+        popUps.forEach(function(popUp) {
+          $(popUp).slideUp();
+        });
+        ///////////////////////////
+
       } else {
         navContactAnim();
       }

@@ -1,25 +1,31 @@
 <div class="container">
   <div class="row">
+
     <%= simple_form_for @message do |f, a| %>
       <%= f.error_notification %>
       <div class="col-xs-12 col-sm-6">
-        <%= f.input :first_name %>
-        <%= f.input :last_name %>
-        <%= f.input :company %>
-        <%= f.input :email %>
+
+        <%= f.fields_for @user do |g| %>
+          <%= g.input :first_name %>
+          <%= g.input :last_name %>
+          <%= g.input :company %>
+          <%= g.input :email %>
+          <%= g.input :phone_number %>
+        <% end %>
+
         <%= f.input :object, required: true, collection: [
           'appointment', 'technical question', 'about my projects', 'other' ] %>
         <%= f.input :content %>
       </div>
       <div class="col-xs-12 col-sm-6">
-        <%= f.fields_for @appointment do |g| %>
-          <%= g.input :appointment_type %>
-          <%= g.datetime_picker :date %>
-          <%= g.input :address %>
-          <%= g.input :phone_number %>
+        <%= f.fields_for @appointment do |e| %>
+          <%= e.input :appointment_type, required: true, collection: [
+          'phone', 'skype', 'in person', 'other (please add details in your message' ] %>
+          <%= e.input :date, as: :string, input_html: { class: "datepicker" } %>
         <% end %>
+    <%= f.button :submit, 'send', class: 'big-button', style: 'position: relative; bottom: 100px' %>
       </div>
+    </div>
   </div>
-        <%= f.button :submit, 'send' %>
   <% end %>
 </div>
