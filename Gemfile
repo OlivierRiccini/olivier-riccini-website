@@ -26,7 +26,7 @@ gem "pundit"
 gem 'bootstrap-sass'
 gem 'font-awesome-sass'
 gem 'simple_form'
-gem 'date_picker'
+# gem 'date_picker'
 
 gem 'autoprefixer-rails'
 gem 'jquery-rails'

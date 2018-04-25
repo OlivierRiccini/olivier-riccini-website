@@ -30,4 +30,5 @@ class AppointmentsController < ApplicationController
 
   def find_message
     @message = Message.find(params[:message_id])
+  end
 end

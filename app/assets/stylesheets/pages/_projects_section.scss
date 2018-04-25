@@ -48,13 +48,13 @@
 .container-tags {
   border: 1px solid rgba(0, 0, 0, 0.1);
   padding: 5px;
-   // box-shadow: 1px 1px 5px rgba(200, 200, 200, 0.2);
 }
 
 .technology-tag {
+  opacity: 0.5;
   padding: 5px 10px;
   background-color: rgba(220, 220, 220, 0.1);
-  box-shadow: 1px 1px 5px rgba(200, 200, 200, 0.2);
+  box-shadow: 1px 1px 1px rgba(200, 200, 200, 0.2);
   display: inline-block;
   max-width: fit-content;
   border: 1px solid rgba(0, 0, 0, 0.1);
@@ -62,29 +62,26 @@
   cursor: pointer;
   transition: all 0.5s;
   &:hover {
-    background-color: rgba(220, 220, 220, 0.4);
+    opacity: 0.9;
+    border: 1px solid rgba(100, 100, 100, 0.9);
   }
+}
+
+.technology-tag-active {
+  opacity: 1;
+  padding: 5px 10px;
+  background-color: rgba(220, 220, 220, 0.1);
+  box-shadow: 1px 1px 5px rgba(200, 200, 200, 0.8);
+  display: inline-block;
+  max-width: fit-content;
+  border: 1px solid rgba(100, 100, 100, 0.9);
+  margin: 3px;
+  cursor: pointer;
+  transition: all 0.5s;
 }
 
 .filter-tags-dropdown {
   display: none;
-}
-
-.filter-button-dropdown {
-  width: 100%;
-  display: block;
-  text-align: center;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  padding: 5px;
-  background-color: rgba(220, 220, 220, 0.1);
-  cursor: pointer;
-  width: 100%;
-  margin: 40px 0 10px 0;
-  transition: all 2s;
-  &:hover {
-    background-color: rgba(220, 220, 220, 0.4);
-    border-color: rgba(0, 0, 0, 0.4);
-  }
 }
 
 .container-tags-dropdown {
@@ -117,7 +114,6 @@
     width: 90%;
   }
 }
-
 
 /* Pop Up project */
 
@@ -186,8 +182,6 @@
   }
 }
 
-
-
 *,
 *:before,
 *:after {
@@ -195,7 +189,6 @@
 }
 
 .triangle {
-
   width: 60px;
   height: 60px;
   border-top: solid 30px rgba(0, 0, 0, 0.1);
@@ -218,7 +211,6 @@
     border-left: solid 30px rgba(0, 0, 0, 0.4);
   }
 }
-
 
 @media screen and (max-width: 1500px) {
   .pop-up-project {

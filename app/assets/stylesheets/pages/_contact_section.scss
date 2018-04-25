@@ -1,0 +1,75 @@
+#contact-section .container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 16px;
+  .form-control {
+    height: 32px;
+    border-radius: 0;
+  }
+  .text {
+    height: 10%;
+  }
+}
+
+.row-form {
+  padding: 100px;
+}
+
+.message-form {
+  padding: 0 15px 0 0;
+  .pt-0 {
+    font-size: 16px;
+    font-weight: bold;
+  }
+}
+
+.appointment-form {
+  transition: all 1s;
+  padding: 0 0 0 15px;
+  opacity: 0.3;
+  z-index: -1;
+}
+
+.appointment-form-enabled {
+  opacity: 1;
+  z-index: 0;
+  -webkit-animation-name: spaceboots;
+  -webkit-animation-duration: 1s;
+  -webkit-transform-origin:50% 50%;
+  -webkit-animation-timing-function: linear;
+}
+
+.form-check {
+  display: inline-block;
+}
+
+.form-check-input {
+  cursor: pointer;
+}
+
+.collection_check_boxes {
+  font-weight: normal;
+  margin: 0 26px 0 10px;
+}
+
+.flatpickr-calendar {
+  margin: 20px auto 0 auto;
+  width: 100%;
+}
+
+@-webkit-keyframes spaceboots {
+  0% { -webkit-transform: translate(2px, 1px) rotate(0deg); }
+  10% { -webkit-transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { -webkit-transform: translate(-3px, 0px) rotate(1deg); }
+  30% { -webkit-transform: translate(0px, 2px) rotate(0deg); }
+  40% { -webkit-transform: translate(1px, -1px) rotate(1deg); }
+  50% { -webkit-transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { -webkit-transform: translate(-3px, 1px) rotate(0deg); }
+  70% { -webkit-transform: translate(2px, 1px) rotate(-1deg); }
+  80% { -webkit-transform: translate(-1px, -1px) rotate(1deg); }
+  90% { -webkit-transform: translate(2px, 2px) rotate(0deg); }
+  100% { -webkit-transform: translate(1px, -2px) rotate(-1deg); }
+}
+

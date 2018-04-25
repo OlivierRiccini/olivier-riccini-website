@@ -9,14 +9,19 @@
 
 //= require jquery
 //= require jquery_ujs
+//= require jquery_ui
 //= require bootstrap-sprockets
 //= require_tree .
 
 console.log('Hello World from Webpacker')
 
 import 'fullpage.js';
+
 import '../components/_custom_fullpage.js';
 import '../components/_background.js';
+import '../components/_form.js';
+
+
 
 $('.filter-button-dropdown').click(function() {
   $('.container-tags-dropdown').slideToggle();
@@ -26,7 +31,6 @@ $('.filter-button-dropdown').click(function() {
     $(this).html('Filter <i class="fa fa-caret-up"></i>');
   }
 });
-
 
 const popUps = document.querySelectorAll('.pop-up-project');
 
@@ -38,7 +42,7 @@ function showPopUp(projectId) {
         $(popUp).slideUp();
       })
     }
-  })
+  });
 }
 
 const projectBoxes =  document.querySelectorAll('.project-box-image');
