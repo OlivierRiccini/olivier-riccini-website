@@ -9,6 +9,14 @@ class UserPolicy < ApplicationPolicy
     admin_list?
   end
 
+  def new?
+    true
+  end
+
+  def create?
+    true
+  end
+
   private
 
   def admin_list?

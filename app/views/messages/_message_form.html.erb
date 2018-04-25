@@ -23,8 +23,8 @@
           'phone', 'skype', 'in person', 'other (please add details in your message' ] %>
           <%= e.input :date, as: :string, input_html: { class: "datepicker" } %>
         <% end %>
-    <%= f.button :submit, 'send', class: 'big-button', style: 'position: relative; bottom: 100px' %>
       </div>
+      <%= f.button :submit, 'send', class: 'big-button btn-message' %>
     </div>
   </div>
   <% end %>

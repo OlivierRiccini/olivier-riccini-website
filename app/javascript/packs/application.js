@@ -13,7 +13,6 @@
 //= require bootstrap-sprockets
 //= require_tree .
 
-console.log('test');
 console.log('Hello World from Webpacker')
 
 import 'fullpage.js';

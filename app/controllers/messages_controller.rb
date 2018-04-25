@@ -51,21 +51,28 @@ class MessagesController < ApplicationController
 
 
   def create
-    @user = User.create(first_name: params[:first_name], last_name: params[:last_name], company: params[:company],
-                        email: params[:email], phone_number: params[:phone_number], password: "123456")
-    @message = Message.new(message_params)
-    @message[:user_id] = @user.id
-    authorize @message
-    @appointment = Appointment.new
+    @user = User.new(password: "123456")
+    @user[:first_name] = params[:message][:user][:first_name]
+    @user[:last_name] = params[:message][:user][:last_name]
+    @user[:company] = params[:message][:user][:company]
+    @user[:email] = params[:message][:user][:email]
+    @user[:phone_number] = params[:message][:user][:phone_number]
+    if @user.save
+      @message = Message.new(message_params)
+      @message[:user_id] = @user.id
+      authorize @message
+      @appointment = Appointment.new
 
-    if @message.save
-      @appointment[:message_id] = @message.id
-      @appointment[:appointment_type] = params[:message][:appointment][:appointment_type]
-      @appointment[:date] = params[:message][:appointment][:date]
-      @appointment.save
-      redirect_to root_path
-    else
-      redirect_to root_path
+      if @message.save
+        @appointment[:message_id] = @message.id
+        @appointment[:appointment_type] = params[:message][:appointment][:appointment_type]
+        @appointment[:date] = params[:message][:appointment][:date]
+        @appointment.save
+
+        redirect_to root_path
+      else
+        render root_path
+      end
     end
   end
 
