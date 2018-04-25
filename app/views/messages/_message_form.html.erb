@@ -1,9 +1,9 @@
 <div class="container">
-  <div class="row">
+  <div class="row row-form">
 
     <%= simple_form_for @message do |f, a| %>
       <%= f.error_notification %>
-      <div class="col-xs-12 col-sm-6">
+      <div class="col-xs-12 col-sm-6 message-form">
 
         <%= f.fields_for @user do |g| %>
           <%= g.input :first_name %>
@@ -13,14 +13,14 @@
           <%= g.input :phone_number %>
         <% end %>
 
-        <%= f.input :object, required: true, collection: [
-          'appointment', 'technical question', 'about my projects', 'other' ] %>
-        <%= f.input :content %>
+        <%= f.input :object, as: :check_boxes, required: true, collection: [
+          'appointment', 'technical question', 'about my projects', 'other' ], input_html: {value: true} %>
+        <%= f.input :content, label: 'Message' %>
       </div>
-      <div class="col-xs-12 col-sm-6">
+      <div class="col-xs-12 col-sm-6 appointment-form">
         <%= f.fields_for @appointment do |e| %>
           <%= e.input :appointment_type, required: true, collection: [
-          'phone', 'skype', 'in person', 'other (please add details in your message' ] %>
+          'phone', 'skype', 'in person', 'other (please add details in your message)' ], id: 'object-form' %>
           <%= e.input :date, as: :string, input_html: { class: "datepicker" } %>
         <% end %>
       </div>

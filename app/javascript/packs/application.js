@@ -17,11 +17,9 @@ console.log('Hello World from Webpacker')
 
 import 'fullpage.js';
 
-import flatpickr from 'flatpickr';
-import 'flatpickr/dist/themes/airbnb.css';
-
 import '../components/_custom_fullpage.js';
 import '../components/_background.js';
+import '../components/_form.js';
 
 
 
@@ -56,10 +54,3 @@ projectBoxes.forEach(function(projectBox) {
     showPopUp(this.dataset.projectId) }
   );
 })
-
-flatpickr('.datepicker', {
-  inline: true,
-  allInput: true,
-  enableTime: true
-});
-
