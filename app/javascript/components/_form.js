@@ -9,12 +9,30 @@ flatpickr('.datepicker', {
 
 
 const appointmentForm = document.querySelector('.appointment-form');
+const closeCalendar = document.querySelector('.close-calendar');
+const boxInup = document.getElementById('message_object_appointment');
+boxInup.dataset.clicked = false;
 
 function displayAppointment() {
-  if ( checkBoxAppointment.value === "appointment" ) {
+  if ( boxInup.dataset.clicked === "false" ) {
+    boxInup.dataset.clicked = true;
+  } else {
+    boxInup.dataset.clicked = false;
+  }
+  if ( window.innerWidth <= 1000 && boxInup.dataset.clicked === "true" ) {
+    $('.appointment-form').slideToggle();
+    appointmentForm.classList.toggle('appointment-form-enabled');
+  }
+  if ( checkBoxAppointment.value === "appointment" && window.innerWidth > 1000 ) {
     appointmentForm.classList.toggle('appointment-form-enabled');
   }
 }
 
+function slideUpCalendar() {
+  $('.appointment-form').slideUp();
+  appointmentForm.classList.remove('appointment-form-enabled');
+}
+
 const checkBoxAppointment = document.getElementById('message_object_appointment');
 checkBoxAppointment.addEventListener('click', displayAppointment);
+closeCalendar.addEventListener('click', slideUpCalendar);

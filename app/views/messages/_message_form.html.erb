@@ -3,12 +3,11 @@
 
     <%= simple_form_for @message do |f, a| %>
       <%= f.error_notification %>
-      <div class="col-xs-12 col-sm-6 message-form">
+      <div class="col-xs-12 col-md-6 message-form">
 
         <%= f.fields_for @user do |g| %>
           <%= g.input :first_name %>
           <%= g.input :last_name %>
-          <%= g.input :company %>
           <%= g.input :email %>
           <%= g.input :phone_number %>
         <% end %>
@@ -17,7 +16,10 @@
           'appointment', 'technical question', 'about my projects', 'other' ], input_html: {value: true} %>
         <%= f.input :content, label: 'Message' %>
       </div>
-      <div class="col-xs-12 col-sm-6 appointment-form">
+      <div class="col-xs-12 col-md-6 appointment-form">
+        <div class="close-calendar">
+          <p>CLOSE CALENDAR</p>
+        </div>
         <%= f.fields_for @appointment do |e| %>
           <%= e.input :appointment_type, required: true, collection: [
           'phone', 'skype', 'in person', 'other (please add details in your message)' ], id: 'object-form' %>
