@@ -59,6 +59,24 @@
   width: 100%;
 }
 
+.close-calendar {
+  display: none;
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  top: 5px;
+  p {
+    display: block;
+    width: max-content;
+    margin: 0 auto;
+    padding: 11px 22px;
+    background-color: rgba(220, 220, 220, 0.1);
+    box-shadow: 1px 1px 5px rgba(200, 200, 200, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+
 @-webkit-keyframes spaceboots {
   0% { -webkit-transform: translate(2px, 1px) rotate(0deg); }
   10% { -webkit-transform: translate(-1px, -2px) rotate(-1deg); }
@@ -73,3 +91,63 @@
   100% { -webkit-transform: translate(1px, -2px) rotate(-1deg); }
 }
 
+@media screen and (max-width: 1000px) {
+  .row-form {
+    padding: 130px;
+  };
+  .appointment-form {
+    display: none;
+    position: absolute;
+    top: 200vh;
+    left: 25%;
+    width: 50%;
+    padding: 20px;
+    background-color: $main-background;
+  };
+  .flatpickr-rContaine {
+    margin: 0 auto !important;
+  };
+  .flatpickr-calendar, .flatpickr-days {
+    width: 100% !important;
+  };
+  .form-group {
+    margin-bottom: 10px;
+  }
+};
+
+
+@media screen and (max-width: 600px) {
+  #contact-section .container {
+    justify-content: flex-end;
+    textarea {
+      margin-bottom: 3px;
+    };
+    label {
+      margin-bottom: 1px;
+    }
+  };
+  .form-group {
+    margin-bottom: 0;
+  };
+  .form-control {
+    height: 18px;
+    margin-bottom: 3px;
+  };
+  .row-form {
+    padding: 10px;
+  };
+  .appointment-form {
+    padding: 85px 0 0 0;
+    width: 100%;
+    left: 0;
+  };
+  .pt-0 {
+    margin: 5px 0;
+  };
+  .flatpickr-rContainer {
+    margin: 0 auto;
+  };
+  .close-calendar {
+    display: block;
+  }
+};
