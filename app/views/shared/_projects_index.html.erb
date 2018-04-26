@@ -1,8 +1,6 @@
 <% @projects.each do |project| %>
   <div class="pop-up-project" data-belongs-to-project-id="<%= project.id %>">
     <div class="container-pop-up">
-
-
       <div class="laptop">
         <div class="upper">
           <%= cl_image_tag project.image, class: 'image-laptop-project' %>
@@ -10,10 +8,6 @@
         <div class="lower">
         </div>
       </div>
-<!--
-      <%= cl_image_tag project.image, class: 'image-pop-up-project' %>
-
--->
       <h2><%= project.title.capitalize %></h2>
       <p><%= project.content %></p>
       <div class="links-container">

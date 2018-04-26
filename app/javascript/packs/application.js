@@ -21,8 +21,6 @@ import '../components/_custom_fullpage.js';
 import '../components/_background.js';
 import '../components/_form.js';
 
-
-
 $('.filter-button-dropdown').click(function() {
   $('.container-tags-dropdown').slideToggle();
   if ($(this).html() === 'Filter <i class="fa fa-caret-up"></i>' ) {
@@ -44,7 +42,6 @@ function showPopUp(projectId) {
       $('.triangle').click(function() {
         $(popUp).slideUp();
         navBar.classList.remove('nav-display-none');
-        // navBar.style.display = 'block';
       });
     }
   });
