@@ -61,15 +61,12 @@
 
 .close-calendar {
   display: none;
-  position: absolute;
-  width: 100%;
-  text-align: center;
-  top: 5px;
+  margin-bottom: 16px;
   p {
     display: block;
     width: max-content;
     margin: 0 auto;
-    padding: 11px 22px;
+    padding: 8px 16px;
     background-color: rgba(220, 220, 220, 0.1);
     box-shadow: 1px 1px 5px rgba(200, 200, 200, 0.8);
     border: 1px solid rgba(0, 0, 0, 0.1);
@@ -99,12 +96,12 @@
     display: none;
     position: absolute;
     top: 200vh;
-    left: 25%;
-    width: 50%;
-    padding: 20px;
+    left: 0%;
+    width: 100%;
+    padding: 30px;
     background-color: $main-background;
   };
-  .flatpickr-rContaine {
+  .flatpickr-rContainer {
     margin: 0 auto !important;
   };
   .flatpickr-calendar, .flatpickr-days {
@@ -113,12 +110,16 @@
   .form-group {
     margin-bottom: 10px;
   }
+  .message-form {
+    padding: 0;
+  }
+  .close-calendar {
+    display: block;
+  }
 };
-
 
 @media screen and (max-width: 600px) {
   #contact-section .container {
-    justify-content: flex-end;
     textarea {
       margin-bottom: 3px;
     };
@@ -137,17 +138,16 @@
     padding: 10px;
   };
   .appointment-form {
-    padding: 85px 0 0 0;
     width: 100%;
     left: 0;
   };
   .pt-0 {
     margin: 5px 0;
   };
-  .flatpickr-rContainer {
-    margin: 0 auto;
-  };
-  .close-calendar {
-    display: block;
+}
+
+@media screen and (max-width: 350px) {
+  #contact-section .container {
+    justify-content: flex-end;
   }
-};
+}
