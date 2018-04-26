@@ -72,6 +72,7 @@ $(document).ready(function() {
 
         popUps.forEach(function(popUp) {
           $(popUp).slideUp();
+          $('.custom-nav-bar').removeClass('nav-display-none');
         });
         ///////////////////////////
 

@@ -23,7 +23,7 @@ function displayAppointment() {
   }
   if ( window.innerWidth <= 1000 && boxInup.dataset.clicked === "true" ) {
     $('.appointment-form').slideToggle();
-    appointmentForm.classList.toggle('appointment-form-enabled');
+    appointmentForm.classList.add('appointment-form-enabled');
     navBar.style.display = 'none';
   }
   if ( checkBoxAppointment.value === "appointment" && window.innerWidth > 1000 ) {

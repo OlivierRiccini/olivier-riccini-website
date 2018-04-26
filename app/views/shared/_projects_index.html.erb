@@ -1,7 +1,19 @@
 <% @projects.each do |project| %>
   <div class="pop-up-project" data-belongs-to-project-id="<%= project.id %>">
     <div class="container-pop-up">
+
+
+      <div class="laptop">
+        <div class="upper">
+          <%= cl_image_tag project.image, class: 'image-laptop-project' %>
+        </div>
+        <div class="lower">
+        </div>
+      </div>
+<!--
       <%= cl_image_tag project.image, class: 'image-pop-up-project' %>
+
+-->
       <h2><%= project.title.capitalize %></h2>
       <p><%= project.content %></p>
       <div class="links-container">
@@ -23,16 +35,16 @@
   <div class="filter-tags">
     <div class="container-tags">
       <% @technologies.each do |technology| %>
-        <span class="technology-tag" data-technology-id="<%= technology.id %>" data-state="uncliked"><%= technology.name%></span>
+        <span class="technology-tag" data-technology-id="<%= technology.id %>" data-state="uncliked"><%= technology.name %></span>
       <% end %>
     </div>
   </div>
 
   <div class="filter-tags-dropdown">
-    <span class="filter-button-dropdown big-button">Filter <i class="fa fa-caret-down"></i></span></span>
+    <span class="filter-button-dropdown big-button">Filter <i class="fa fa-caret-down"></i></span>
     <div class="container-tags-dropdown">
       <% @technologies.each do |technology| %>
-        <span class="technology-tag" data-technology-id="<%= technology.id %>" data-state="uncliked"><%= technology.name%></span>
+        <span class="technology-tag" data-technology-id="<%= technology.id %>" data-state="uncliked"><%= technology.name %></span>
       <% end %>
     </div>
   </div>

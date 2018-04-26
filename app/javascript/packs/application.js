@@ -33,14 +33,19 @@ $('.filter-button-dropdown').click(function() {
 });
 
 const popUps = document.querySelectorAll('.pop-up-project');
+const navBar = document.querySelector('.custom-nav-bar');
 
 function showPopUp(projectId) {
   popUps.forEach(function(popUp) {
+
     if ( popUp.dataset.belongsToProjectId === projectId ) {
       $(popUp).slideToggle();
+      navBar.classList.toggle('nav-display-none');
       $('.triangle').click(function() {
         $(popUp).slideUp();
-      })
+        navBar.classList.remove('nav-display-none');
+        // navBar.style.display = 'block';
+      });
     }
   });
 }
