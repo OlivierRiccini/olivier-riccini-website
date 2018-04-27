@@ -13,6 +13,10 @@
   }
 }
 
+#message_content {
+  font-size: 14px;
+}
+
 .row-form {
   padding: 100px;
 }
@@ -121,18 +125,19 @@
 @media screen and (max-width: 600px) {
   #contact-section .container {
     textarea {
-      margin-bottom: 3px;
+      margin-bottom: 0.5vh;
+      height: 8vh !important;
     };
     label {
       margin-bottom: 1px;
-    }
+    };
   };
   .form-group {
     margin-bottom: 0;
   };
   .form-control {
-    height: 18px;
-    margin-bottom: 3px;
+    height: 4vh !important;
+    margin-bottom: 0.5vh !important;
   };
   .row-form {
     padding: 10px;
@@ -144,10 +149,7 @@
   .pt-0 {
     margin: 5px 0;
   };
-}
-
-@media screen and (max-width: 350px) {
-  #contact-section .container {
-    justify-content: flex-end;
+  .btn-message {
+    margin-bottom: 0;
   }
 }

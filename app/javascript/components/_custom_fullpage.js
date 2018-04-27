@@ -21,7 +21,7 @@ function navHomeAnim() {
   spanContact.classList.remove('span-active');
 
   $('.arrow-down-container').fadeIn();
-  // $('#avatar').css('top', 'calc(50% - 100px)');
+  $('.custom-footer').fadeOut();
 }
 
 function navProjectsAnim() {
@@ -33,8 +33,8 @@ function navProjectsAnim() {
   spanProjects.classList.add('span-active');
   spanContact.classList.remove('span-active');
 
-  // $('#avatar').css('top', 'calc(15% - 100px)');
   $('.arrow-down-container').fadeIn();
+  $('.custom-footer').fadeOut();
 }
 
 function navContactAnim() {
@@ -46,12 +46,11 @@ function navContactAnim() {
   spanContact.classList.add('span-active');
 
   $('.arrow-down-container').fadeOut();
+  $('.custom-footer').css('display', 'flex');
 }
 
 $(document).ready(function() {
-// $('.filter-tags').css('display', 'none');
-// $('.filter-tags-dropdown').css('display', 'none');
-$('.projects-row').css('visibility', 'hidden');
+// $('.projects-row').css('visibility', 'hidden');
 
   $('#fullpage').fullpage({
     afterLoad: function() {
@@ -63,15 +62,10 @@ $('.projects-row').css('visibility', 'hidden');
         navContactAnim();
       }
 
-      if (this[0].id === "projects-section" ) {
-        // $('.filter-tags').css('display', 'block');
-        // $('.filter-tags-dropdown').css('display', 'block');
-        $('.projects-row').css('visibility', 'visible');
-
-        // $('.filter-tags').addClass('animate-reveal animate-second');
-        // $('.filter-tags-dropdown').addClass('animate-reveal animate-second');
-        $('.projects-row').addClass('animate-reveal animate-second');
-      }
+      // if (this[0].id === "projects-section" ) {
+      //   $('.projects-row').css('visibility', 'visible');
+      //   $('.projects-row').addClass('animate-reveal animate-second');
+      // }
     },
 
     onLeave: function() {
@@ -93,13 +87,6 @@ $('.projects-row').css('visibility', 'hidden');
       }
 
       if (this[0].id === "projects-section" ) {
-        // $('.filter-tags').css('display', 'none');
-        // $('.filter-tags-dropdown').css('display', 'none');
-        $('.projects-row').css('visibility', 'hidden');
-
-        // $('.filter-tags').removeClass('animate-reveal animate-second');
-        // $('.filter-tags-dropdown').removeClass('animate-reveal animate-second');
-        $('.projects-row').removeClass('animate-reveal animate-second');
       }
     }
   });

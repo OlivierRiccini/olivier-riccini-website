@@ -1,0 +1,20 @@
+.custom-footer {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+  // display: flex;
+  justify-content: center;
+  align-items: center;
+  ul {
+    padding: 2vh 30vw;
+    margin: 0;
+    border-top: 1px solid $font-color;
+  };
+  li {
+    display: inline-block;
+    a {
+      color: $font-color;
+    }
+  }
+}
