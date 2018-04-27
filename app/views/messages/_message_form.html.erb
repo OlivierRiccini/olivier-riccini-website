@@ -18,7 +18,7 @@
       </div>
       <div class="col-xs-12 col-md-6 appointment-form">
         <div class="close-calendar">
-          <p>CLOSE CALENDAR</p>
+          <p>OK 👌</p>
         </div>
         <%= f.fields_for @appointment do |e| %>
           <%= e.input :appointment_type, required: true, collection: [
@@ -28,6 +28,6 @@
       </div>
       <%= f.button :submit, 'send', class: 'big-button btn-message' %>
     </div>
-  </div>
   <% end %>
 </div>
+

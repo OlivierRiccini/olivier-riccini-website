@@ -40,3 +40,20 @@ function slideUpCalendar() {
 const checkBoxAppointment = document.getElementById('message_object_appointment');
 checkBoxAppointment.addEventListener('click', displayAppointment);
 closeCalendar.addEventListener('click', slideUpCalendar);
+
+const appointmentDate = document.getElementById('message_appointment_date');
+const message = document.getElementById('message_content');
+
+function messageTextForAppointment() {
+  let date = appointmentDate.value;
+  message.innerText =
+  `Hi Olivier le big boss, what's up!? I would like to book an appointment with you ${date}, good for you bro?`;
+}
+
+appointmentDate.addEventListener('change', messageTextForAppointment);
+
+
+
+
+
+

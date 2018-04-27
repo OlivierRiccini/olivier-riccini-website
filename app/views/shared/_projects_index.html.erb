@@ -10,18 +10,25 @@
       </div>
       <h2><%= project.title.capitalize %></h2>
       <p><%= project.content %></p>
-      <div class="links-container">
-        <%= link_to project.link, target: '_blank',class: 'link-btn' do %>
-            <i class="fas fa-laptop"></i>
-            &nbsp;&nbsp;go to website
-        <% end %>
-        <%= link_to project.github, target: '_blank',class: 'link-btn' do %>
-          <i class="fab fa-github-alt"></i>
-          &nbsp;&nbsp;source code
-        <% end %>
-      </div>
+
+
     </div>
-    <div class="triangle"><p>close</p></div>
+      <div class="bottom-popUp">
+
+        <div class="links-container">
+          <%= link_to project.link, target: '_blank',class: 'link-btn' do %>
+              <i class="fas fa-laptop"></i>
+              &nbsp;&nbsp;go to website
+          <% end %>
+          <%= link_to project.github, target: '_blank',class: 'link-btn' do %>
+            <i class="fab fa-github-alt"></i>
+            &nbsp;&nbsp;source code
+          <% end %>
+        </div>
+
+        <div class="triangle"><p>close</p></div>
+
+      </div>
   </div>
 <% end %>
 
