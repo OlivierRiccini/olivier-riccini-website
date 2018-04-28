@@ -1,0 +1,32 @@
+<% if @user.valid? && @message.valid? %>
+  document.getElementById('new_message').innerHTML = `<h2>COUCOU!</h2>`;
+
+<% else %>
+
+  <% if !@user.valid? %>
+    document.getElementById('message-email-error').innerText = '<%= @user.errors.messages[:email][0] %>';
+    document.querySelector('.message_user_email label').style.color = 'red';
+    document.getElementById('message_user_email').style.borderColor = 'red';
+  <% else %>
+    document.getElementById('message-email-error').innerText = '';
+    document.querySelector('.message_user_email label').style.color = 'rgba(0,0,0,0.8)';
+    document.getElementById('message_user_email').style.borderColor = '#ccc';
+  <% end %>
+
+  <% if @message.content.nil? %>
+    document.getElementById('message-content-error').innerText = '<%= @message.errors[:content][0] %>';
+    document.querySelector('.message_content label').style.color = 'red';
+    document.getElementById('message_content').style.borderColor = 'red';
+  <% else %>
+    <% if @message.content.length > 20 &&  @message.content.length < 500 %>
+    document.getElementById('message-content-error').innerText = "";
+      document.querySelector('.message_content label').style.color = `rgba(0,0,0,0.8)`;
+      document.getElementById('message_content').style.borderColor = '#ccc';
+    <% else %>
+      document.getElementById('message-content-error').innerText = '<%= @message.errors[:content][0] %>';
+      document.querySelector('.message_content label').style.color = 'red';
+      document.getElementById('message_content').style.borderColor = 'red';
+    <% end %>
+  <% end %>
+
+<% end %>

@@ -4,6 +4,7 @@ import 'flatpickr/dist/themes/airbnb.css';
 flatpickr('.datepicker', {
   inline: true,
   allInput: true,
+  minDate: "today",
   enableTime: true
 });
 
@@ -44,13 +45,18 @@ closeCalendar.addEventListener('click', slideUpCalendar);
 const appointmentDate = document.getElementById('message_appointment_date');
 const message = document.getElementById('message_content');
 
-function messageTextForAppointment() {
+function messageTextForAppointment(event) {
   let date = appointmentDate.value;
+  if ( event.type === "click" && boxInup.dataset.clicked === "false" ) {
+       message.innerText = "";
+  } else if ( event.type === "change" || (event.type === "click" && boxInup.dataset.clicked === "true" && date )) {
   message.innerText =
   `Hi Olivier le big boss, what's up!? I would like to book an appointment with you ${date}, good for you bro?`;
+  }
 }
 
 appointmentDate.addEventListener('change', messageTextForAppointment);
+checkBoxAppointment.addEventListener('click', messageTextForAppointment);
 
 
 

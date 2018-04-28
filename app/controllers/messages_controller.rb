@@ -57,23 +57,29 @@ class MessagesController < ApplicationController
     @user[:company] = params[:message][:user][:company]
     @user[:email] = params[:message][:user][:email]
     @user[:phone_number] = params[:message][:user][:phone_number]
-    if @user.save
-      @message = Message.new(message_params)
-      @message[:user_id] = @user.id
-      authorize @message
-      @appointment = Appointment.new
+    # if @user.save
+    @user.save
 
+    @message = Message.new(message_params)
+    @message[:user_id] = @user.id
+    authorize @message
+
+    @appointment = Appointment.new
+
+    respond_to do |format|
       if @message.save
         @appointment[:message_id] = @message.id
         @appointment[:appointment_type] = params[:message][:appointment][:appointment_type]
         @appointment[:date] = params[:message][:appointment][:date]
         @appointment.save
 
-        redirect_to root_path
+        format.js
       else
-        render root_path
+        format.html { render "/"}
+        format.js
       end
     end
+    # end
   end
 
   # def create

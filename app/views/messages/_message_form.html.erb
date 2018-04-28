@@ -1,20 +1,22 @@
 <div class="container">
   <div class="row row-form">
 
-    <%= simple_form_for @message do |f, a| %>
+    <%= simple_form_for @message, remote: true do |f, a| %>
       <%= f.error_notification %>
       <div class="col-xs-12 col-md-6 message-form">
 
         <%= f.fields_for @user do |g| %>
-          <%= g.input :first_name %>
-          <%= g.input :last_name %>
-          <%= g.input :email %>
+          <%= g.input :first_name, required: true %>
+          <%= g.input :last_name, required: true %>
+          <%= g.input :email, required: true %>
+          <span  class="error-message" id="message-email-error"></span>
           <%= g.input :phone_number %>
         <% end %>
 
         <%= f.input :object, as: :check_boxes, required: true, collection: [
           'appointment', 'technical question', 'about my projects', 'other' ], input_html: {value: true} %>
-        <%= f.input :content, label: 'Message' %>
+        <%= f.input :content, required: true, label: 'Message' %>
+        <span class="error-message" id="message-content-error"></span>
       </div>
       <div class="col-xs-12 col-md-6 appointment-form">
         <div class="close-calendar">
@@ -23,6 +25,7 @@
         <%= f.fields_for @appointment do |e| %>
           <%= e.input :appointment_type, required: true, collection: [
           'phone', 'skype', 'in person', 'other (please add details in your message)' ], id: 'object-form' %>
+          <span id="appointment-type-error"></span>
           <%= e.input :date, as: :string, input_html: { class: "datepicker" } %>
         <% end %>
       </div>
