@@ -18,7 +18,7 @@
     document.querySelector('.message_content label').style.color = 'red';
     document.getElementById('message_content').style.borderColor = 'red';
   <% else %>
-    <% if @message.content.length > 20 &&  @message.content.length < 500 %>
+    <% if @message.content.length >= 20 &&  @message.content.length <= 500 %>
     document.getElementById('message-content-error').innerText = "";
       document.querySelector('.message_content label').style.color = `rgba(0,0,0,0.8)`;
       document.getElementById('message_content').style.borderColor = '#ccc';
