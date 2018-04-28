@@ -13,6 +13,7 @@
   width: 60px;
   top: 20px;
   left: 20px;
+  stroke-dashoffset: 1800 !important;
 }
 
 .navigation {
@@ -75,7 +76,7 @@
 
 /* Responsive */
 
-@media screen and (max-width: 100px) {
+@media screen and (max-width: 1000px) {
   #logo-inho {
     width: 50px;
   };
@@ -88,6 +89,7 @@
 @media screen and (max-width: 860px) {
   #logo-inho {
     width: 50px;
+    top: 0;
   };
   .nav-item {
     .span1 {

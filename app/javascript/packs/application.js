@@ -55,4 +55,36 @@ projectBoxes.forEach(function(projectBox) {
   projectBox.addEventListener('click', function() {
     showPopUp(this.dataset.projectId) }
   );
-})
+});
+
+
+/* Drawing Logo */
+const path = document.querySelectorAll('#logo-inho path');
+const logo = document.getElementById('logo-inho');
+
+let intervalDraw = null;
+
+let i = 255;
+function draw() {
+  i += 0.1;
+  path.forEach(function(element) {
+    element.style.strokeDasharray = `${i}`;
+    if(i >= 300) {
+      clearInterval(intervalDraw);
+    }
+  });
+}
+
+function defIntervalDraw() {
+  i = 255;
+  intervalDraw = setInterval(draw, 5);
+}
+
+defIntervalDraw();
+logo.addEventListener('mouseover', defIntervalDraw);
+
+
+
+
+
+
