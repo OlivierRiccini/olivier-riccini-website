@@ -34,6 +34,7 @@
   padding: 0 0 0 15px;
   opacity: 0.3;
   z-index: -1;
+  background: rgba(252, 252, 252, 0.7) !important;
 }
 
 .appointment-form-enabled {
@@ -79,7 +80,10 @@
     box-shadow: 1px 1px 5px rgba(200, 200, 200, 0.8);
     border: 1px solid rgba(0, 0, 0, 0.1);
     cursor: pointer;
-  }
+    &:hover {
+      background-color: rgba(220, 220, 220, 0.5);
+    }
+  };
 }
 
 .today {
@@ -171,6 +175,7 @@
   .appointment-form {
     width: 100%;
     left: 0;
+    padding: 6px;
   };
   .pt-0 {
     margin: 5px 0;

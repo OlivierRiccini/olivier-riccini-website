@@ -7,9 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 technologies = [ 'html', 'css', 'javascript', 'ruby', 'ruby on rails',
-                 'react.js', 'bootstrap', 'jquery', 'turbolinks',
-                 'heroku', 'potsgresql', 'webpack', 'api',
-                 'geocoder', 'json', 'httparty' ]
+                 'bootstrap', 'jquery', 'turbolinks','heroku', 'potsgresql',
+                 'webpack', 'api', 'geocoder', 'httparty', 'uploader', 'admin',
+                 'pundit' ]
 
 technologies.each do |technology|
   Technology.create(name: technology)
@@ -29,7 +29,7 @@ projects = [
     github: "https://github.com/OlivierRiccini/opb-app",
     used_technologies: [ 'html', 'css', 'javascript', 'ruby', 'ruby on rails',
                          'bootstrap', 'jquery', 'turbolinks', 'heroku',
-                         'potsgresql', 'webpack' ]
+                         'potsgresql', 'webpack', 'uploader', 'admin' ]
   },
   {
     title: "gamiflex",
@@ -41,9 +41,8 @@ projects = [
     link: "http://www.gamiflex.com/",
     github: "https://github.com/OlivierRiccini/gamiflex",
     used_technologies: [ 'html', 'css', 'javascript', 'ruby', 'ruby on rails',
-                         'bootstrap', 'jquery', 'turbolinks',
-                         'heroku', 'potsgresql', 'webpack', 'api',
-                         'geocoder', 'json', 'httparty' ]
+                         'bootstrap', 'jquery', 'turbolinks','heroku', 'potsgresql',
+                         'webpack', 'api', 'httparty', 'pundit', 'uploader' ]
   },
   {
     title: "montresor",
@@ -55,8 +54,8 @@ projects = [
     link: "http://montresor-72.herokuapp.com/",
     github: "https://github.com/OlivierRiccini/montresor",
     used_technologies: [ 'html', 'css', 'javascript', 'ruby', 'ruby on rails',
-                         'bootstrap', 'jquery', 'turbolinks',
-                         'heroku', 'potsgresql', 'webpack' ]
+                         'bootstrap', 'jquery', 'turbolinks','heroku', 'potsgresql',
+                         'webpack', 'api', 'pundit', 'uploader' ]
   },
   {
     title: "skills-sports-management",
