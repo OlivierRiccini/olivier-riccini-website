@@ -13,8 +13,8 @@
           <%= g.input :phone_number %>
         <% end %>
 
-        <%= f.input :object, as: :check_boxes, required: true, collection: [
-          'appointment', 'technical question', 'about my projects', 'other' ], input_html: {value: true} %>
+        <%= f.input :object, as: :check_boxes, collection: [
+          'appointment', 'technical question', 'about my projects', 'other' ] %>
         <%= f.input :content, required: true, label: 'Message' %>
         <span class="error-message" id="message-content-error"></span>
       </div>
