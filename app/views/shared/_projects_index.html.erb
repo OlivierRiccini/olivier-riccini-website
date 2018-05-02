@@ -34,28 +34,7 @@
 
 
 <div class="container flex-container">
-  <span class="arrow-toggle-filters">Filters >>></span>
-  <!--
-  <div class="filter-tags">
-    <div class="container-tags">
-      <% @technologies.each do |technology| %>
-        <span class="technology-tag" data-technology-id="<%= technology.id %>" data-state="uncliked"><%= technology.name %></span>
-      <% end %>
-    </div>
-  </div>
-
-
-  <div class="filter-tags-dropdown">
-    <span class="filter-button-dropdown big-button">Filter <i class="fa fa-caret-down"></i></span>
-    <div class="container-tags-dropdown">
-      <% @technologies.each do |technology| %>
-        <span class="technology-tag" data-technology-id="<%= technology.id %>" data-state="uncliked"><%= technology.name %></span>
-      <% end %>
-    </div>
-  </div>
--->
-
-
+  <span class="arrow-toggle-filters" data-clicked='false'>Filters -></span>
   <ul class="filters-right-slide">
     <% @technologies.each do |technology| %>
       <li class="technology-tag" data-technology-id="<%= technology.id %>" data-state="uncliked"><%= technology.name %></li>
