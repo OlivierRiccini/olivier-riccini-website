@@ -53,11 +53,11 @@
   z-index: 9;
   top: 100vh;
   height: 100vh;
-  line-height: 1.5;
+  line-height: 1;
   padding: 0;
-  background-color: $main-background;
+  background-color: rgba(252, 252, 252, 0.9);
   box-shadow: 1px 1px 5px rgba(200, 200, 200, 0.2);
-  padding: 25px;
+  padding: 20px;
   list-style: none;
   flex-direction: column;
   justify-content: center;
