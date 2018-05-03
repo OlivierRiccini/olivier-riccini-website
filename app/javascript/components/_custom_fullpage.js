@@ -87,6 +87,10 @@ $(document).ready(function() {
       }
 
       if (this[0].id === "projects-section" ) {
+        $('.filters-right-slide').removeClass('filters-right-slide-active');
+        $('.arrow-toggle-filters').addClass('filers-active');
+        $('.arrow-toggle-filters').removeClass('filers-inactive');
+        $('.arrow-toggle-filters').text('Filters ->');
       }
     }
   });

@@ -46,12 +46,16 @@ function defintervalAnimArrow() {
 $('.arrow-toggle-filters').click(function() {
   $('.custom-nav-bar').toggleClass('nav-display-none');
   $('.filters-right-slide').toggleClass('filters-right-slide-active');
-  if ( arrowFilter.dataset.clicked === 'false' ) {
+  if ( arrowFilter.dataset.clicked === 'false' || arrowFilter.innerText === 'Filters ->' ) {
     arrowFilter.innerText = '<- Close';
     arrowFilter.dataset.clicked = 'true';
+    arrowFilter.classList.remove('filers-active');
+    arrowFilter.classList.add('filers-inactive');
   } else {
     arrowFilter.innerText = 'Filters ->';
     arrowFilter.dataset.clicked = 'false';
+    arrowFilter.classList.remove('filers-inactive');
+    arrowFilter.classList.add('filers-active');
   }
 });
 
