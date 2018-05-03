@@ -33,13 +33,13 @@
 <% end %>
 
 
+<span class="arrow-toggle-filters" data-clicked='false'>Filters -></span>
+<ul class="filters-right-slide">
+  <% @technologies.each do |technology| %>
+    <li class="technology-tag" data-technology-id="<%= technology.id %>" data-state="uncliked"><%= technology.name %></li>
+  <% end %>
+</ul>
 <div class="container flex-container">
-  <span class="arrow-toggle-filters" data-clicked='false'>Filters -></span>
-  <ul class="filters-right-slide">
-    <% @technologies.each do |technology| %>
-      <li class="technology-tag" data-technology-id="<%= technology.id %>" data-state="uncliked"><%= technology.name %></li>
-    <% end %>
-  </ul>
   <div class="projects-row">
     <div class="row">
       <% @projects.each do |project| %>
