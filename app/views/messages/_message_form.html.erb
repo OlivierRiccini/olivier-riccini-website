@@ -6,11 +6,23 @@
       <div class="col-xs-12 col-md-6 message-form">
 
         <%= f.fields_for @user do |g| %>
-          <%= g.input :first_name, required: true %>
-          <%= g.input :last_name, required: true %>
-          <%= g.input :email, required: true %>
-          <span  class="error-message" id="message-email-error"></span>
-          <%= g.input :phone_number %>
+          <div class="row">
+            <div class="col-xs-6">
+              <%= g.input :first_name, required: true %>
+            </div>
+            <div class="col-xs-6">
+              <%= g.input :last_name, required: true %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-6">
+            <%= g.input :email, required: true %>
+            <span  class="error-message" id="message-email-error"></span>
+            </div>
+            <div class="col-xs-6">
+              <%= g.input :phone_number %>
+            </div>
+          </div>
         <% end %>
 
         <%= f.input :object, as: :check_boxes, collection: [

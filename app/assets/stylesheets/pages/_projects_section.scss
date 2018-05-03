@@ -2,10 +2,6 @@
   width: 100%;
 }
 
-#projects-section {
-  position: relative;
-}
-
 #projects-section .fp-tableCell {
   width: 60%;
   display: flex;
@@ -26,6 +22,16 @@
 .box-project {
   padding: 2px;
 }
+
+.project-active {
+  box-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+}
+
+.project-inactive {
+  box-shadow: 0;
+  opacity: 0.2;
+}
+
 
 .project-title {
   font-size: 16px;
@@ -79,12 +85,12 @@
 .arrow-toggle-filters {
   color: rgba(0, 0, 0, 0.6);
   cursor: pointer;
-  margin-left: -14px;
+  margin-left: 135px;
   font-weight: bold;
   position: absolute;
-  bottom: 45px;
-  left: 45px;
-  z-index: 99;
+  bottom: 0;
+  // left: 45px;
+  // z-index: 99;
   &:hover {
     color: rgba(0, 0, 0, 0.8);
   }
