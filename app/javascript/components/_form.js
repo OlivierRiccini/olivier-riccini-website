@@ -13,6 +13,7 @@ const appointmentForm = document.querySelector('.appointment-form');
 const closeCalendar = document.querySelector('.close-calendar');
 const boxInup = document.getElementById('message_object_appointment');
 const navBar = document.querySelector('.custom-nav-bar');
+const customFooter = document.querySelector('.custom-footer');
 
 boxInup.dataset.clicked = false;
 
@@ -26,6 +27,7 @@ function displayAppointment() {
     $('.appointment-form').slideToggle();
     appointmentForm.classList.add('appointment-form-enabled');
     navBar.style.display = 'none';
+    customFooter.style.display = 'none';
   }
   if ( checkBoxAppointment.value === "appointment" && window.innerWidth > 1000 ) {
     appointmentForm.classList.toggle('appointment-form-enabled');
@@ -36,6 +38,7 @@ function slideUpCalendar() {
   $('.appointment-form').slideUp();
   appointmentForm.classList.remove('appointment-form-enabled');
   navBar.style.display = 'block';
+  customFooter.style.display = 'block';
 }
 
 const checkBoxAppointment = document.getElementById('message_object_appointment');
