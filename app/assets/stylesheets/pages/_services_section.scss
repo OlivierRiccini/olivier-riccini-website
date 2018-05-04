@@ -17,9 +17,11 @@
   text-align: center;
   i {
     font-size: 22px;
+    color: $flash;
   };
   h3 {
     font-size: 18px;
+    opacity: 0.75;
     font-weight: bolder;
     margin: 12px;
   };
@@ -32,6 +34,10 @@
 .box-service {
   padding: 15px;
   border: 1px solid rgba(0, 0, 0, 0.1);
+  transition: all 1s;
+  &:hover {
+    border: 1px solid rgba(255, 110, 36, 0.8);
+  }
 }
 
 @media screen and (max-width: 600px) {

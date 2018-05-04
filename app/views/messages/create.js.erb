@@ -5,8 +5,8 @@
 
   <% if !@user.valid? %>
     document.getElementById('message-email-error').innerText = '<%= @user.errors.messages[:email][0] %>';
-    document.querySelector('.message_user_email label').style.color = 'red';
-    document.getElementById('message_user_email').style.borderColor = 'red';
+    document.querySelector('.message_user_email label').style.color = 'rgb(255, 110, 36)';
+    document.getElementById('message_user_email').style.borderColor = 'rgb(255, 110, 36)';
   <% else %>
     document.getElementById('message-email-error').innerText = '';
     document.querySelector('.message_user_email label').style.color = 'rgba(0,0,0,0.8)';
@@ -15,8 +15,8 @@
 
   <% if @message.content.nil? %>
     document.getElementById('message-content-error').innerText = '<%= @message.errors[:content][0] %>';
-    document.querySelector('.message_content label').style.color = 'red';
-    document.getElementById('message_content').style.borderColor = 'red';
+    document.querySelector('.message_content label').style.color = 'rgb(255, 110, 36)';
+    document.getElementById('message_content').style.borderColor = 'rgb(255, 110, 36)';
   <% else %>
     <% if @message.content.length >= 20 &&  @message.content.length <= 500 %>
     document.getElementById('message-content-error').innerText = "";
@@ -24,8 +24,8 @@
       document.getElementById('message_content').style.borderColor = '#ccc';
     <% else %>
       document.getElementById('message-content-error').innerText = '<%= @message.errors[:content][0] %>';
-      document.querySelector('.message_content label').style.color = 'red';
-      document.getElementById('message_content').style.borderColor = 'red';
+      document.querySelector('.message_content label').style.color = 'rgb(255, 110, 36)';
+      document.getElementById('message_content').style.borderColor = 'rgb(255, 110, 36)';
     <% end %>
   <% end %>
 

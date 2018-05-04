@@ -21,13 +21,18 @@
   border-bottom: 2px solid rgba(0,0,0,1);
   transform: rotate(45deg);
   margin: 0 auto;
+  transition: all 0.2s;
+  &:hover {
+    border-right: 2px solid $flash;
+    border-bottom: 2px solid $flash;
+  }
 }
 
 .arrow-down-animated {
   width: 17px;
   height: 17px;
-  border-right: 1px solid #000;
-  border-bottom: 1px solid #000;
+  border-right: 1px solid $flash;
+  border-bottom: 1px solid $flash;
   transform: rotate(45deg) !important;
   margin: 0 auto;
   position: relative;

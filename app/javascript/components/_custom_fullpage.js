@@ -199,7 +199,7 @@ function globalArrowDownAnimation() {
       arrowDownIndex += 1;
       arrowDownColorIndex += 0.05;
       arrowDown[0].style.top = `${arrowDownIndex}px`;
-      arrowDown[0].style.borderColor = `rgba(0,0,0,${arrowDownColorIndex})`;
+      arrowDown[0].style.borderColor = `rgba(255, 110, 36, ${arrowDownColorIndex})`;
       if (arrowDownColorIndex >= 1) {
         arrowDownColorIndex = 0;
       }

@@ -121,9 +121,3 @@ function defIntervalDraw() {
 
 defIntervalDraw();
 logo.addEventListener('mouseover', defIntervalDraw);
-
-
-
-
-
-

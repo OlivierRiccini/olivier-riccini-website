@@ -17,6 +17,10 @@
   cursor: pointer;
 }
 
+path {
+  color: $flash;
+}
+
 .navigation {
   position: absolute;
   top: 20px;
@@ -68,11 +72,16 @@
 .display-class {
   right: 0 !important;
   font-weight: bolder !important;
+  color: $flash;
 }
 
 .span-active {
-  background-color: $font-color !important;
+  background-color: $flash !important;
+  border: 1px solid $flash !important;
   transform: rotate(0deg) !important;
+  .span2 {
+    border: 1px solid $flash !important;
+  }
 }
 
 /* Responsive */
