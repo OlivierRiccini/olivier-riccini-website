@@ -29,6 +29,7 @@
           'appointment', 'technical question', 'about my projects', 'other' ] %>
         <%= f.input :content, required: true, label: 'Message' %>
         <span class="error-message" id="message-content-error"></span>
+      <%= f.button :submit, 'send', class: 'big-button btn-message' %>
       </div>
       <div class="col-xs-12 col-md-6 appointment-form">
         <div class="close-calendar">
@@ -41,7 +42,6 @@
           <%= e.input :date, as: :string, input_html: { class: "datepicker" } %>
         <% end %>
       </div>
-      <%= f.button :submit, 'send', class: 'big-button btn-message' %>
     </div>
   <% end %>
 </div>
