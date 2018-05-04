@@ -1,23 +1,32 @@
 const home = document.getElementById('home');
 const projects = document.getElementById('projects');
+const services = document.getElementById('services');
 const contact = document.getElementById('contact');
 
 const homeP = document.getElementById('home-p');
 const projectsP = document.getElementById('projects-p');
+const servicesP = document.getElementById('services-p');
 const contactP = document.getElementById('contact-p');
 
 const spanHome = document.querySelector('#home.span1');
 const spanProjects = document.querySelector('#projects.span1');
+const spanServices = document.querySelector('#services.span1');
 const spanContact = document.querySelector('#contact.span1');
 
 const arrow = document.querySelector('.arrow-down-container');
 
 function navHomeAnim() {
+
   homeP.classList.add('display-class');
   spanHome.classList.add('span-active');
+
   projectsP.classList.remove('display-class');
-  contactP.classList.remove('display-class');
   spanProjects.classList.remove('span-active');
+
+  servicesP.classList.remove('display-class');
+  spanServices.classList.remove('span-active');
+
+  contactP.classList.remove('display-class');
   spanContact.classList.remove('span-active');
 
   $('.arrow-down-container').fadeIn();
@@ -28,9 +37,32 @@ function navProjectsAnim() {
 
   homeP.classList.remove('display-class');
   spanHome.classList.remove('span-active');
+
   projectsP.classList.add('display-class');
-  contactP.classList.remove('display-class');
   spanProjects.classList.add('span-active');
+
+  servicesP.classList.remove('display-class');
+  spanServices.classList.remove('span-active');
+
+  contactP.classList.remove('display-class');
+  spanContact.classList.remove('span-active');
+
+  $('.arrow-down-container').fadeIn();
+  $('.custom-footer').fadeOut();
+}
+
+function navServicesAnim() {
+
+  homeP.classList.remove('display-class');
+  spanHome.classList.remove('span-active');
+
+  projectsP.classList.remove('display-class');
+  spanProjects.classList.remove('span-active');
+
+  servicesP.classList.add('display-class');
+  spanServices.classList.add('span-active');
+
+  contactP.classList.remove('display-class');
   spanContact.classList.remove('span-active');
 
   $('.arrow-down-container').fadeIn();
@@ -38,11 +70,17 @@ function navProjectsAnim() {
 }
 
 function navContactAnim() {
+
   homeP.classList.remove('display-class');
   spanHome.classList.remove('span-active');
+
   projectsP.classList.remove('display-class');
-  contactP.classList.add('display-class');
   spanProjects.classList.remove('span-active');
+
+  servicesP.classList.remove('display-class');
+  spanServices.classList.remove('span-active');
+
+  contactP.classList.add('display-class');
   spanContact.classList.add('span-active');
 
   $('.arrow-down-container').fadeOut();
@@ -50,7 +88,6 @@ function navContactAnim() {
 }
 
 $(document).ready(function() {
-// $('.projects-row').css('visibility', 'hidden');
 
   $('#fullpage').fullpage({
     afterLoad: function() {
@@ -58,20 +95,17 @@ $(document).ready(function() {
         navHomeAnim();
       } else if ( this[0].id === "projects-section" ) {
         navProjectsAnim();
+      } else if ( this[0].id === "services-section" ) {
+        navServicesAnim();
       } else {
         navContactAnim();
       }
-
-      // if (this[0].id === "projects-section" ) {
-      //   $('.projects-row').css('visibility', 'visible');
-      //   $('.projects-row').addClass('animate-reveal animate-second');
-      // }
     },
 
     onLeave: function() {
       if (this[0].id === "home-section" ) {
       } else if ( this[0].id === "projects-section" ) {
-        navProjectsAnim();
+        // navProjectsAnim();
 
         /* Closing project all pop-ups */
         const popUps = document.querySelectorAll('.pop-up-project');
@@ -83,7 +117,7 @@ $(document).ready(function() {
         ///////////////////////////
 
       } else {
-        navContactAnim();
+        // navContactAnim();
       }
 
       if (this[0].id === "projects-section" ) {
@@ -103,8 +137,12 @@ $(document).ready(function() {
     $.fn.fullpage.moveTo(2);
     return false;
   });
-  $('#contact').click(function(){
+  $('#services').click(function(){
     $.fn.fullpage.moveTo(3);
+    return false;
+  });
+  $('#contact').click(function(){
+    $.fn.fullpage.moveTo(4);
     return false;
   });
 });
@@ -118,27 +156,29 @@ function slideRight(item) {
   item.style.right = `-100%`;
 }
 
-function display(item) {
-  if ( item === homeP ) {
-    navHomeAnim();
-  } else if ( item === projectsP ) {
-    navProjectsAnim();
-  } else {
-    navContactAnim();
-  }
-}
+// function display(item) {
+//   if ( item === homeP ) {
+//     navHomeAnim();
+//   } else if ( item === projectsP ) {
+//     navProjectsAnim();
+//   } else {
+//     navContactAnim();
+//   }
+// }
 
 home.addEventListener('mouseover', function() { slideLeft(homeP) });
 projects.addEventListener('mouseover', function() { slideLeft(projectsP) });
+services.addEventListener('mouseover', function() { slideLeft(servicesP) });
 contact.addEventListener('mouseover', function() { slideLeft(contactP) });
 
 home.addEventListener('mouseleave', function() { slideRight(homeP) });
 projects.addEventListener('mouseleave', function() { slideRight(projectsP) });
+services.addEventListener('mouseleave', function() { slideRight(servicesP) });
 contact.addEventListener('mouseleave', function() { slideRight(contactP) });
 
-home.addEventListener('click', function() { display(homeP) });
-projects.addEventListener('click', function() { display(projectsP) });
-contact.addEventListener('click', function() { display(contactP) });
+// home.addEventListener('click', function() { display(homeP) });
+// projects.addEventListener('click', function() { display(projectsP) });
+// contact.addEventListener('click', function() { display(contactP) });
 
 // /* Arrow pulse bottom */
 const arrowDownContainer = document.querySelectorAll('.arrow-down-container');
