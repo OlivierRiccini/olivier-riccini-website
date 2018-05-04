@@ -111,12 +111,16 @@
   .appointment-form {
     display: none;
     position: absolute;
-    top: 200vh;
+    top: 0;
     left: 0%;
     width: 100%;
     padding: 30px;
     background-color: $main-background;
   };
+
+  #contact-section .container {
+    position: relative;
+  }
   .message_appointment_date, .message_appointment_appointment_type {
     width: 45%;
     margin: 0 auto;
