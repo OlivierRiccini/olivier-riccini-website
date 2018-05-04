@@ -1,18 +1,7 @@
-<!-- <p>ip: <%= request.remote_ip %></p>
-<p>add: <%= request.remote_addr %></p>
-
- -->
 <canvas id="canvas"></canvas>
-<div class="custom-nav-bar">
-  <%= render 'shared/logo' %>
-  <div class="navigation">
-    <ul>
-      <li class="nav-item"><div class="overflow-hidden"><p id="home-p" class="display-class">Home</p></div><span class="span1 span-active" id="home"><span class="span2"></span></span></li>
-      <li class="nav-item"><div class="overflow-hidden"><p id="projects-p">Projects</p></div><span class="span1" id="projects"><span class="span2"></span></span></li>
-      <li class="nav-item"><div class="overflow-hidden"><p id="contact-p">Contact</p></div><span class="span1" id="contact"><span class="span2"></span></span></li>
-    </ul>
-  </div>
-</div>
+
+<%= render 'shared/navbar' %>
+
 <div id="fullpage">
   <div class="section" id="home-section">
     <%= render 'shared/landing_page' %>
