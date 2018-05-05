@@ -59,15 +59,6 @@ $('.arrow-toggle-filters').click(function() {
   }
 });
 
-function filterMenuPosition() {
-  let menuWidth = menuFilter.offsetWidth;
-  menuFilter.style.left = `-${menuWidth}px`;
-  console.log(menuWidth);
-}
-
-filterMenuPosition();
-window.addEventListener('resize', filterMenuPosition);
-
 /* Popup */
 const popUps = document.querySelectorAll('.pop-up-project');
 const navBar = document.querySelector('.custom-nav-bar');

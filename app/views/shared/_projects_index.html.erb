@@ -31,14 +31,14 @@
       </div>
   </div>
 <% end %>
-
-
-<ul class="filters-right-slide">
-  <% @technologies.each do |technology| %>
-    <li class="technology-tag" data-technology-id="<%= technology.id %>" data-state="uncliked"><%= technology.name %></li>
-  <% end %>
-  <span class="arrow-toggle-filters" data-clicked='false'>Filters -></span>
-</ul>
+<div class="filter-bar-container">
+  <ul class="filters-right-slide">
+    <% @technologies.each do |technology| %>
+      <li class="technology-tag" data-technology-id="<%= technology.id %>" data-state="uncliked"><%= technology.name %></li>
+    <% end %>
+    <span class="arrow-toggle-filters" data-clicked='false'>Filters -></span>
+  </ul>
+</div>
 <div class="container flex-container">
   <div class="projects-row">
     <div class="row">
