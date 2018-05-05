@@ -90,7 +90,7 @@ function navContactAnim() {
 $(document).ready(function() {
 
   $('#fullpage').fullpage({
-    sectionsColor : ['red', 'blue', 'green', 'yellow'],
+
     afterLoad: function() {
       if (this[0].id === "home-section" ) {
         navHomeAnim();
