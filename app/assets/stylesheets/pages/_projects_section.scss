@@ -95,7 +95,7 @@
   cursor: pointer;
   margin-left: 135px;
   position: absolute;
-  bottom: 5vh;
+  bottom: 8vh;
   transition: all 2s;
   &:hover {
     opacity: 0.7;
@@ -103,7 +103,7 @@
 }
 
 .filers-inactive {
-  top: 5vh;
+  top: 8vh;
 }
 
 .technology-tag-active {
@@ -178,8 +178,9 @@
   position: absolute;
   top: 0;
   height: 75vh;
-  left: 12vw;
-  right: 12vw;
+  width: 100%;
+  // left: 12vw;
+  // right: 12vw;
   padding: 10px 10px 0 10px;
   background-color: #fff;
   border-left: 1px solid rgba(0, 0, 0, 0.1);
@@ -202,9 +203,11 @@
     box-shadow: 1px 1px 5px rgba(200, 200, 200, 0.2);
     padding: 5px;
     width: 100%;
+    font-size: 22px;
   };
   p {
     margin: 0 0 45px;
+    font-size: 14px;
   }
 }
 
@@ -281,24 +284,24 @@
 }
 
 @media screen and (max-width: 1500px) {
-  .pop-up-project {
-    left: 15vw;
-    right: 15vw;
-  }
+  // .pop-up-project {
+  //   left: 15vw;
+  //   right: 15vw;
+  // }
 }
 
 @media screen and (max-width: 815px) {
-  .pop-up-project {
-    left: 17vw;
-    right: 17vw;
-  }
+  // .pop-up-project {
+  //   left: 17vw;
+  //   right: 17vw;
+  // }
 }
 
 @media screen and (max-width: 700px) {
-  .pop-up-project {
-    left: 0;
-    right: 0;
-  };
+  // .pop-up-project {
+  //   left: 0;
+  //   right: 0;
+  // };
   .link-btn {
     font-size: 12px;
   }
