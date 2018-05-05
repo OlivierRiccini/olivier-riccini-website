@@ -10,10 +10,6 @@
   margin: 0 auto;
 }
 
-// .projects-row {
-//   width: 90%;
-// }
-
 #projects-section .col-xs-6 {
   padding: 0;
   transition: all 2s;
@@ -210,26 +206,26 @@
 
 
 .link-btn {
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid $flash;
   background-color: rgba(220, 220, 220, 0.1);
   box-shadow: 1px 1px 5px rgba(200, 200, 200, 0.2);
   padding: 0px 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: $font-color;
+  color: $flash;
   margin: 5px;
   transition: all 1s;
   font-size: 14px;
   &:hover {
     text-decoration: none;
-    background-color: rgba(220, 220, 220, 0.4);
-    border-color: rgba(0, 0, 0, 0.4);
-    color: $font-color;
+    background-color: $flash;
+    color: $main-background;
+    opacity: 0.7;
   };
   &:focus {
     text-decoration: none;
-    color: $font-color;
+    color: $main-background;
   }
 }
 

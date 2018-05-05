@@ -3,3 +3,41 @@
 // @import "dashboard";
 // @import "profile";
 // @import "map";
+
+.ask-for-turn-screen {
+  display: none;
+  z-index: 9999;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  background-color: $main-background;
+  color: $font-color;
+  .div-icons-turn {
+    color: $flash;
+    i {
+      font-size: 60px;
+      margin: 20px 40px;
+    }
+  };
+  .fa-undo {
+    transform: rotate(90deg);
+  };
+  .fa-mobile-alt  {
+    color: $font-color;
+  };
+  .modile-horizontal {
+    transform: rotate(-90deg);
+  };
+}
+
+@media screen and (max-height: 550px) {
+  .ask-for-turn-screen {
+    display: flex;
+  }
+}
