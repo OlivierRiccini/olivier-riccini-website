@@ -91,17 +91,19 @@
   margin-bottom: 16px;
   p {
     display: block;
+    color: $flash;
     width: max-content;
     margin: 0 auto;
     padding: 8px 16px;
     background-color: rgba(220, 220, 220, 0.1);
     box-shadow: 1px 1px 5px rgba(200, 200, 200, 0.8);
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    border: 1px solid $flash;
     cursor: pointer;
     transition: all 1s;
     &:hover {
-      background-color: rgba(220, 220, 220, 0.5);
-      border: 1px solid rgba(255, 110, 36, 0.8);
+      background-color: $flash;
+      color: $main-background;
+      opacity: 0.7;
     }
   };
 }
