@@ -4,6 +4,10 @@
 // @import "profile";
 // @import "map";
 
+.section {
+  padding: 0 !important;
+}
+
 .ask-for-turn-screen {
   display: none;
   z-index: 9999;
