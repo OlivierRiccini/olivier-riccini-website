@@ -165,7 +165,7 @@
   border-left: 1px solid rgba(0, 0, 0, 0.1);
   border-right: 1px solid rgba(0, 0, 0, 0.1);
   box-shadow: 1px 1px 5px rgba(200, 200, 200, 0.2);
-  z-index: 999ç;
+  z-index:99;
   text-align: center;
 }
 
@@ -195,6 +195,7 @@
 .bottom-popUp {
   margin-left: -11px;
   margin-right: -11px;
+  margin-top: -2px;
   display: flex;
   justify-content: space-between;
   .links-container {

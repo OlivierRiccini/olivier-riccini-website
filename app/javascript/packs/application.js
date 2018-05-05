@@ -71,6 +71,7 @@ window.addEventListener('resize', filterMenuPosition);
 /* Popup */
 const popUps = document.querySelectorAll('.pop-up-project');
 const navBar = document.querySelector('.custom-nav-bar');
+const arrowDown = document.querySelector('.arrow-down-container');
 
 function showPopUp(projectId) {
   popUps.forEach(function(popUp) {
@@ -78,9 +79,11 @@ function showPopUp(projectId) {
     if ( popUp.dataset.belongsToProjectId === projectId ) {
       $(popUp).slideToggle();
       navBar.classList.toggle('nav-display-none');
+      arrowDown.classList.toggle('nav-display-none');
       $('.triangle').click(function() {
         $(popUp).slideUp();
         navBar.classList.remove('nav-display-none');
+        arrowDown.classList.remove('nav-display-none');
       });
     }
   });
