@@ -3,11 +3,12 @@
   position: absolute;
   bottom: 0;
   width: 100vw;
-  // display: flex;
   justify-content: center;
   align-items: center;
   ul {
-    padding: 2vh 30vw;
+    display: flex;
+    align-items: center;
+    padding: 2vh 15vw;
     margin: 0;
     border-top: 1px solid rgba(0, 0, 0, 0.15);
   };
@@ -23,13 +24,12 @@
         color: $flash;
       }
     }
-  }
+  };
 }
 
-@media screen and (max-width: 400px) {
-  .custom-footer {
-    ul {
-      padding: 1vh 30vw;
-    }
+.resume a {
+  font-size: 14px !important;
+  &:hover {
+    text-decoration: none;
   }
 }
