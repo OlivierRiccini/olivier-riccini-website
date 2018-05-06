@@ -11,5 +11,6 @@ Rails.application.routes.draw do
   resources :projects
 
   get 'inho_dashboard', to: "pages#inho_dashboard"
+  get 'resume', to: "pages#resume"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

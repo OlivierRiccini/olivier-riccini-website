@@ -1,0 +1,91 @@
+body {
+  background: rgb(204,204,204);
+  font-family: 'PT Serif', serif;
+  color: rgb(80,80,80);
+}
+page {
+  background: white;
+  display: block;
+  margin: 50px auto;
+  margin-bottom: 0.5cm;
+  box-shadow: 0 0 0.5cm rgba(0,0,0,0.5);
+  padding: 35px 140px;
+}
+page[size="A4"] {
+  width: 21cm;
+  height: 29.7cm;
+}
+page[size="A4"][layout="portrait"] {
+  width: 29.7cm;
+  height: 21cm;
+}
+@media print {
+  body, page {
+    margin: 0;
+    box-shadow: 0;
+  }
+}
+
+.title {
+  border-bottom: 1px solid rgba(0,0,0,0.5);
+}
+
+p {
+  font-size: 12px;
+}
+
+a {
+ color: rgba(0,0,0,0.7);
+ cursor: pointer;
+}
+
+a:hover {
+  color: rgba(0,0,0,0.9);
+  text-decoration: none;
+}
+
+h1 {
+  font-size: 48px;
+  margin: 0 0 12px 0;
+}
+
+h2 {
+  font-size: 26px;
+  margin: 0 0 12px 0;
+}
+
+h3 {
+  font-size: 20px;
+  margin-top: 14px;
+}
+
+h4 {
+  margin: 0;
+}
+
+.skills, .intro {
+  margin-left: -70px;
+  margin-right: -70px;
+}
+
+.section-title {
+  border-bottom: 1px solid rgba(0,0,0,0.5);
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  display: inline;
+}
+
+.experience, .education {
+  margin-left: -70px;
+  margin-right: -70px;
+}
+
+.box-grid {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+}
