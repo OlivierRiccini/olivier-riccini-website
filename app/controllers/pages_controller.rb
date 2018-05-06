@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [ :home, :resume ]
+  skip_before_action :authenticate_user!, only: [ :home, :resume_online, :resume_pdf ]
 
   def home
     @projects = Project.all
@@ -16,6 +16,9 @@ class PagesController < ApplicationController
     authorize @user
   end
 
-  def resume
+  def resume_online
+  end
+
+  def resume_pdf
   end
 end
