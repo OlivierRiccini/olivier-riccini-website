@@ -12,8 +12,16 @@ class PagesController < ApplicationController
 
   def inho_dashboard
     @projects = Project.all
+    @users = User.all
     @user = current_user
     authorize @user
+
+    # appointment inforamtions
+    # @appointments = []
+
+    @appointments = Appointment.all
+    # @appointment_with = User.where(id:
+    # Message.where(id: appointment.message_id)user_id)take.first_name
   end
 
   def resume_online
