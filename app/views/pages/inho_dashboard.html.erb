@@ -1,5 +1,40 @@
 <h1>Inho dashboard</h1>
 
+<div class="container">
+  <h2>Users</h2>
+  <table>
+    <tr>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>email</th>
+      <th>Company</th>
+    </tr>
+    <% @users.each do |user| %>
+      <% if user != User.first %>
+        <tr>
+          <td><%= user.first_name %></td>
+          <td><%= user.last_name %></td>
+          <td><%= user.email %></td>
+          <td><%= user.company %></td>
+        </tr>
+     <% end %>
+   <% end %>
+  </table>
+
+  <h2>Messages</h2>
+  <% @users.each do |user| %>
+    <% user.messages.each do |message| %>
+        <p><%= message.content %></p>
+    <% end %>
+  <% end %>
+
+  <h2>Appointments</h2>
+  <% @appointments.each do |appointment| %>
+    <p><%= appointment.appointment_type %> - <%= appointment.date %> with
+      <%= appointment.message_id %>
+      <%= Message.where(id: appointment.message_id).take.user.first_name %>
+    </p>
+  <% end %>
+
+</div>
 <%= link_to 'Edit profile', edit_user_registration_path(@user) %>
-
-
