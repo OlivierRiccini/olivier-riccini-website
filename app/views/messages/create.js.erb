@@ -1,5 +1,24 @@
 <% if @user.valid? && @message.valid? %>
-  document.getElementById('new_message').innerHTML = `<h2>COUCOU!</h2>`;
+  const messageWrapper = document.querySelector('.message-wrapper')
+  messageWrapper.innerHTML = `
+  <div class="thanks-message-container">
+    <h3 id="thanks-message">Thanks for your message!</h3>
+  </div>`;
+
+
+  // function newMessage() {
+  //   messageWrapper.innerHTML = `<%= render 'message_form' %>`
+
+  //   document.querySelector('textarea').value = "";;
+
+  //   const inputs = document.querySelectorAll('input');
+
+  //   inputs.forEach(function(input) {
+  //     input.value = "";
+  //   });
+  // };
+
+  // setTimeout(newMessage, 5000);
 
 <% else %>
 

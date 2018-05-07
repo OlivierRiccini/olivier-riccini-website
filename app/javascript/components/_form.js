@@ -54,7 +54,7 @@ function messageTextForAppointment(event) {
        message.innerText = "";
   } else if ( event.type === "change" || (event.type === "click" && boxInup.dataset.clicked === "true" && date )) {
   message.innerText =
-  `Hi Olivier le big boss, what's up!? I would like to book an appointment with you ${date}, good for you bro?`;
+  `Hi Olivier, what's up!? I would like to book an appointment with you ${date}, good for you bro?`;
   }
 }
 
